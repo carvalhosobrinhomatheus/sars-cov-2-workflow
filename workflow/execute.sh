@@ -15,12 +15,12 @@ echo '    ###[$ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 '$2'.fastq > '$
 NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 $2.fastq > $2_high_quality.fastq
 
 echo '\n\n'
-echo '    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_' $2 ' -d Sars_cov_2_' $2 ' -nanopore ' $2 '_high_quality.fastq]'
+echo '    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_'$2' -d Sars_cov_2_'$2' -nanopore '$2'_high_quality.fastq]'
 canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_$2 -d Sars_cov_2_$2 -nanopore $2_high_quality.fastq
 
 echo '\n\n'
 echo '    ###[$ cd $1/]'
 cd $1/
 
-echo '    ###[$ ./vgas ' $2 '/Sars_cov_2_' $2 '/Sars_cov_2_' $2 '.contigs.fasta Sars_cov_2_' $2 '.gene.prediction -n -p -b]'
+echo '    ###[$ ./vgas '$2'/Sars_cov_2_'$2'/Sars_cov_2_'$2'.contigs.fasta Sars_cov_2_'$2'.gene.prediction -n -p -b]'
 ./vgas $2/Sars_cov_2_$2/Sars_cov_2_$2.contigs.fasta Sars_cov_2_$2.gene.prediction -n -p -b
