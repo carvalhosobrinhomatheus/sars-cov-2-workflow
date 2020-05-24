@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo '   ### Execute - ' $2
 datetime=$(date +"%m-%d-%Y-%H-%M-%S")
 
@@ -27,4 +29,4 @@ echo '    ###[$ cd $1/]'
 cd $1/
 
 echo '    ###[$ ./vgas '$2'/Sars_cov_2_'$2'/Sars_cov_2_'$2'.contigs.fasta Sars_cov_2_'$2'.gene.prediction -n -p -b]'
-./vgas $2_$datetime/Sars_cov_2_$2/Sars_cov_2_$2.contigs.fasta Sars_cov_2_$2.gene.prediction -n -p -b
+./vgas $2_$datetime/Sars_cov_2_$2/Sars_cov_2_$2.contigs.fasta Sars_cov_2_$2_$datetime.gene.prediction -n -p -b
