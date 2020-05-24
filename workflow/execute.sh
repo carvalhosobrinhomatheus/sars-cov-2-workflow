@@ -11,7 +11,7 @@ echo '    ###[$ fastqc ' $2 '.fastq]'
 fastqc $2.fastq
 
 echo '\n\n'
-echo '    ###[$ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 ' $2 '.fastq > ' $2 '_high_quality.fastq]'
+echo '    ###[$ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 '$2'.fastq > '$2'_high_quality.fastq]'
 NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 $2.fastq > $2_high_quality.fastq
 
 echo '\n\n'
