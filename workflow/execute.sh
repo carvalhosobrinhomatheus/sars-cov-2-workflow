@@ -4,10 +4,12 @@ mkdir $1/$2/
 cd $1/$2
 
 echo '    ###[$ fastq-dump ' $2 ']'
+#$1/sratoolkit/bin/fastq-dump $2
 fastq-dump $2
 
 echo '\n\n'
 echo '    ###[$ fastqc ' $2 '.fastq]'
+#$1/FastQC/fastqc $2.fastq
 fastqc $2.fastq
 
 echo '\n\n'
@@ -16,6 +18,7 @@ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 $2.fastq > $2_high_quality.fast
 
 echo '\n\n'
 echo '    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_'$2' -d Sars_cov_2_'$2' -nanopore '$2'_high_quality.fastq]'
+#$1/canu/Linux-amd64/bin/canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_$2 -d Sars_cov_2_$2 -nanopore $2_high_quality.fastq
 canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_$2 -d Sars_cov_2_$2 -nanopore $2_high_quality.fastq
 
 echo '\n\n'
