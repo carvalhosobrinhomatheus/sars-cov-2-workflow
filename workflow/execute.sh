@@ -1,7 +1,8 @@
 echo '   ### Execute - ' $2
+datetime=$(date +"%m-%d-%Y-%H-%M-%S")
 
-mkdir $1/$2/
-cd $1/$2
+mkdir $1/$2_$datetime/
+cd $1/$2_$datetime
 
 echo '    ###[$ fastq-dump ' $2 ']'
 #$1/sratoolkit/bin/fastq-dump $2
@@ -26,4 +27,4 @@ echo '    ###[$ cd $1/]'
 cd $1/
 
 echo '    ###[$ ./vgas '$2'/Sars_cov_2_'$2'/Sars_cov_2_'$2'.contigs.fasta Sars_cov_2_'$2'.gene.prediction -n -p -b]'
-./vgas $2/Sars_cov_2_$2/Sars_cov_2_$2.contigs.fasta Sars_cov_2_$2.gene.prediction -n -p -b
+./vgas $2_$datetime/Sars_cov_2_$2/Sars_cov_2_$2.contigs.fasta Sars_cov_2_$2.gene.prediction -n -p -b
