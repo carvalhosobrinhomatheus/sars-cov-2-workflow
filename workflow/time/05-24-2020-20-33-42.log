@@ -1,0 +1,1742 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "pt_BR:pt:en",
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "pt_BR.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("pt_BR.UTF-8").
+Started analysis of SRR11178051.fastq
+Approx 5% complete for SRR11178051.fastq
+Approx 10% complete for SRR11178051.fastq
+Approx 15% complete for SRR11178051.fastq
+Approx 20% complete for SRR11178051.fastq
+Approx 25% complete for SRR11178051.fastq
+Approx 30% complete for SRR11178051.fastq
+Approx 35% complete for SRR11178051.fastq
+Approx 40% complete for SRR11178051.fastq
+Approx 45% complete for SRR11178051.fastq
+Approx 50% complete for SRR11178051.fastq
+Approx 55% complete for SRR11178051.fastq
+Approx 60% complete for SRR11178051.fastq
+Approx 65% complete for SRR11178051.fastq
+Approx 70% complete for SRR11178051.fastq
+Approx 75% complete for SRR11178051.fastq
+Approx 80% complete for SRR11178051.fastq
+Approx 85% complete for SRR11178051.fastq
+Approx 90% complete for SRR11178051.fastq
+Approx 95% complete for SRR11178051.fastq
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "pt_BR:pt:en",
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "pt_BR.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("pt_BR.UTF-8").
+-- canu snapshot v2.0-development +523 changes (r10016 cafc287f0c6a33d7540deb21a0311fb985d3bdb8)
+--
+-- CITATIONS
+--
+-- For 'standard' assemblies of PacBio or Nanopore reads:
+--   Koren S, Walenz BP, Berlin K, Miller JR, Phillippy AM.
+--   Canu: scalable and accurate long-read assembly via adaptive k-mer weighting and repeat separation.
+--   Genome Res. 2017 May;27(5):722-736.
+--   http://doi.org/10.1101/gr.215087.116
+-- 
+-- Read and contig alignments during correction, consensus and GFA building use:
+--   Šošic M, Šikic M.
+--   Edlib: a C/C ++ library for fast, exact sequence alignment using edit distance.
+--   Bioinformatics. 2017 May 1;33(9):1394-1395.
+--   http://doi.org/10.1093/bioinformatics/btw753
+-- 
+-- Overlaps are generated using:
+--   Berlin K, et al.
+--   Assembling large genomes with single-molecule sequencing and locality-sensitive hashing.
+--   Nat Biotechnol. 2015 Jun;33(6):623-30.
+--   http://doi.org/10.1038/nbt.3238
+-- 
+--   Myers EW, et al.
+--   A Whole-Genome Assembly of Drosophila.
+--   Science. 2000 Mar 24;287(5461):2196-204.
+--   http://doi.org/10.1126/science.287.5461.2196
+-- 
+-- Corrected read consensus sequences are generated using an algorithm derived from FALCON-sense:
+--   Chin CS, et al.
+--   Phased diploid genome assembly with single-molecule real-time sequencing.
+--   Nat Methods. 2016 Dec;13(12):1050-1054.
+--   http://doi.org/10.1038/nmeth.4035
+-- 
+-- Contig consensus sequences are generated using an algorithm derived from pbdagcon:
+--   Chin CS, et al.
+--   Nonhybrid, finished microbial genome assemblies from long-read SMRT sequencing data.
+--   Nat Methods. 2013 Jun;10(6):563-9
+--   http://doi.org/10.1038/nmeth.2474
+-- 
+-- CONFIGURE CANU
+--
+-- Detected Java(TM) Runtime Environment '11.0.7' (from 'java') without -d64 support.
+-- Detected gnuplot version '5.2 patchlevel 6   ' (from 'gnuplot') and image format 'png'.
+-- Detected 4 CPUs and 8 gigabytes of memory.
+-- No grid engine detected, grid and staging disabled.
+--
+--                                (tag)Concurrency
+--                         (tag)Threads          |
+--                (tag)Memory         |          |
+--        (tag)             |         |          |       total usage      algorithm
+--        -------  ----------  --------   --------  --------------------  -----------------------------
+-- Local: meryl      8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (k-mer counting)
+-- Local: hap        8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (read-to-haplotype assignment)
+-- Local: cormhap    6.000 GB    4 CPUs x   1 job      6.000 GB   4 CPUs  (overlap detection with mhap)
+-- Local: obtovl     4.000 GB    4 CPUs x   1 job      4.000 GB   4 CPUs  (overlap detection)
+-- Local: utgovl     4.000 GB    4 CPUs x   1 job      4.000 GB   4 CPUs  (overlap detection)
+-- Local: cor        8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (read correction)
+-- Local: ovb        4.000 GB    1 CPU  x   2 jobs     8.000 GB   2 CPUs  (overlap store bucketizer)
+-- Local: ovs        8.000 GB    1 CPU  x   1 job      8.000 GB   1 CPU   (overlap store sorting)
+-- Local: red        8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (read error detection)
+-- Local: oea        8.000 GB    1 CPU  x   1 job      8.000 GB   1 CPU   (overlap error adjustment)
+-- Local: bat        8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (contig construction with bogart)
+-- Local: cns        -.--- GB    4 CPUs x   - jobs     -.--- GB   - CPUs  (consensus)
+-- Local: gfa        8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (GFA alignment and processing)
+--
+-- Found untrimmed raw Nanopore reads in the input files.
+--
+-- Generating assembly 'Sars_cov_2_SRR11178051' in '/home/matheus/processamento_workflow/SRR11178051_05-24-2020-20-33-42/Sars_cov_2_SRR11178051':
+--    - correct raw reads.
+--    - trim corrected reads.
+--    - assemble corrected and trimmed reads.
+--
+-- Parameters:
+--
+--  genomeSize        30000
+--
+--  Overlap Generation Limits:
+--    corOvlErrorRate 0.3200 ( 32.00%)
+--    obtOvlErrorRate 0.1200 ( 12.00%)
+--    utgOvlErrorRate 0.1200 ( 12.00%)
+--
+--  Overlap Processing Limits:
+--    corErrorRate    0.5000 ( 50.00%)
+--    obtErrorRate    0.1200 ( 12.00%)
+--    utgErrorRate    0.1200 ( 12.00%)
+--    cnsErrorRate    0.2000 ( 20.00%)
+--
+--
+-- BEGIN CORRECTION
+--
+----------------------------------------
+-- Starting command on Sun May 24 20:41:52 2020 with 48.083 GB free disk space
+
+    cd .
+    ./Sars_cov_2_SRR11178051.seqStore.sh \
+    > ./Sars_cov_2_SRR11178051.seqStore.err 2>&1
+
+-- Finished on Sun May 24 20:41:59 2020 (7 seconds) with 47.941 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:41:59 2020 with 47.941 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -raw \
+      -histogram \
+      -lengths \
+    > ./Sars_cov_2_SRR11178051.seqStore/readlengths-cor.dat \
+    2> ./Sars_cov_2_SRR11178051.seqStore/readlengths-cor.err 
+    
+
+-- Finished on Sun May 24 20:41:59 2020 (in the blink of an eye) with 47.941 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:41:59 2020 with 47.941 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -raw \
+      -histogram \
+    > ./Sars_cov_2_SRR11178051.seqStore/readlengths-cor.txt \
+    2> ./Sars_cov_2_SRR11178051.seqStore/readlengths-cor.err 
+    
+
+-- Finished on Sun May 24 20:41:59 2020 (like a bat out of hell) with 47.941 GB free disk space
+----------------------------------------
+--
+-- In sequence store './Sars_cov_2_SRR11178051.seqStore':
+--   Found 4527 reads.
+--   Found 6000791 bases (200.02 times coverage).
+--    
+--    G=6000791                          sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010         1992       249       600349  ||       1000-1074          993|---------------------------------------------------------------
+--    00020         1657       582      1200940  ||       1075-1149          770|-------------------------------------------------
+--    00030         1489       965      1801691  ||       1150-1224          579|-------------------------------------
+--    00040         1368      1385      2401454  ||       1225-1299          481|-------------------------------
+--    00050         1278      1839      3001014  ||       1300-1374          345|----------------------
+--    00060         1205      2323      3601080  ||       1375-1449          237|----------------
+--    00070         1142      2835      4200809  ||       1450-1524          255|-----------------
+--    00080         1088      3374      4800880  ||       1525-1599          160|-----------
+--    00090         1041      3938      5400978  ||       1600-1674          145|----------
+--    00100         1000      4526      6000791  ||       1675-1749           96|-------
+--    001.000x                4527      6000791  ||       1750-1824           74|-----
+--                                               ||       1825-1899           74|-----
+--                                               ||       1900-1974           56|----
+--                                               ||       1975-2049           50|----
+--                                               ||       2050-2124           37|---
+--                                               ||       2125-2199           29|--
+--                                               ||       2200-2274           25|--
+--                                               ||       2275-2349           18|--
+--                                               ||       2350-2424           18|--
+--                                               ||       2425-2499           13|-
+--                                               ||       2500-2574           14|-
+--                                               ||       2575-2649            8|-
+--                                               ||       2650-2724            6|-
+--                                               ||       2725-2799            9|-
+--                                               ||       2800-2874            7|-
+--                                               ||       2875-2949            4|-
+--                                               ||       2950-3024            3|-
+--                                               ||       3025-3099            1|-
+--                                               ||       3100-3174            3|-
+--                                               ||       3175-3249            2|-
+--                                               ||       3250-3324            2|-
+--                                               ||       3325-3399            2|-
+--                                               ||       3400-3474            4|-
+--                                               ||       3475-3549            0|
+--                                               ||       3550-3624            1|-
+--                                               ||       3625-3699            2|-
+--                                               ||       3700-3774            0|
+--                                               ||       3775-3849            1|-
+--                                               ||       3850-3924            1|-
+--                                               ||       3925-3999            0|
+--                                               ||       4000-4074            0|
+--                                               ||       4075-4149            1|-
+--                                               ||       4150-4224            0|
+--                                               ||       4225-4299            0|
+--                                               ||       4300-4374            0|
+--                                               ||       4375-4449            0|
+--                                               ||       4450-4524            0|
+--                                               ||       4525-4599            0|
+--                                               ||       4600-4674            0|
+--                                               ||       4675-4749            1|-
+--    
+-- New report created.
+----------------------------------------
+-- Starting command on Sun May 24 20:41:59 2020 with 47.94 GB free disk space
+
+    cd correction/0-mercounts
+    ./meryl-configure.sh \
+    > ./meryl-configure.err 2>&1
+
+-- Finished on Sun May 24 20:42:00 2020 (one second) with 47.94 GB free disk space
+----------------------------------------
+--  segments   memory batches
+--  -------- -------- -------
+--        01  0.07 GB       1
+--
+--  For 4527 reads with 6000791 bases, limit to 1 batch.
+--  Will count kmers using 01 jobs, each using 2 GB and 4 threads.
+--
+-- Report changed.
+-- Finished stage 'merylConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Sun May 24 20:42:00 2020 with 47.94 GB free disk space (1 processes; 1 concurrently)
+
+    cd correction/0-mercounts
+    ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
+
+-- Finished on Sun May 24 20:42:01 2020 (one second) with 47.927 GB free disk space
+----------------------------------------
+-- Found 1 Kmer counting (meryl) outputs.
+-- No change in report.
+-- Finished stage 'cor-merylCountCheck', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Sun May 24 20:42:01 2020 with 47.927 GB free disk space (1 processes; 1 concurrently)
+
+    cd correction/0-mercounts
+    ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
+
+-- Finished on Sun May 24 20:42:02 2020 (one second) with 47.937 GB free disk space
+----------------------------------------
+-- Meryl finished successfully.  Kmer frequency histogram:
+--
+--  16-mers                                                                                           Fraction
+--    Occurrences   NumMers                                                                         Unique Total
+--       1-     1         0                                                                        0.0000 0.0000
+--       2-     2    187956 ********************************************************************** 0.4751 0.0982
+--       3-     4    101538 *************************************                                  0.6463 0.1513
+--       5-     7     42356 ***************                                                        0.7828 0.2131
+--       8-    11     17437 ******                                                                 0.8551 0.2636
+--      12-    16      7664 **                                                                     0.8884 0.2988
+--      17-    22      3922 *                                                                      0.9046 0.3233
+--      23-    29      2927 *                                                                      0.9133 0.3415
+--      30-    37      3061 *                                                                      0.9205 0.3616
+--      38-    46      4065 *                                                                      0.9284 0.3897
+--      47-    56      4922 *                                                                      0.9388 0.4363
+--      57-    67      4926 *                                                                      0.9513 0.5039
+--      68-    79      4149 *                                                                      0.9634 0.5825
+--      80-    92      3551 *                                                                      0.9737 0.6612
+--      93-   106      2660                                                                        0.9826 0.7411
+--     107-   121      1823                                                                        0.9890 0.8073
+--     122-   137      1341                                                                        0.9935 0.8608
+--     138-   154       590                                                                        0.9968 0.9045
+--     155-   172       324                                                                        0.9982 0.9266
+--     173-   191       152                                                                        0.9990 0.9394
+--     192-   211        72                                                                        0.9994 0.9466
+--     212-   232        18                                                                        0.9995 0.9500
+--     233-   254        21                                                                        0.9996 0.9511
+--     255-   277        18                                                                        0.9996 0.9524
+--     278-   301        11                                                                        0.9997 0.9537
+--     302-   326         7                                                                        0.9997 0.9545
+--     327-   352         2                                                                        0.9997 0.9551
+--     353-   379         0                                                                        0.0000 0.0000
+--     380-   407         2                                                                        0.9997 0.9553
+--     408-   436         1                                                                        0.9997 0.9555
+--     437-   466         1                                                                        0.9997 0.9556
+--     467-   497         5                                                                        0.9997 0.9557
+--     498-   529         5                                                                        0.9998 0.9564
+--     530-   562         4                                                                        0.9998 0.9570
+--     563-   596        12                                                                        0.9998 0.9578
+--     597-   631         4                                                                        0.9998 0.9596
+--     632-   667         6                                                                        0.9998 0.9601
+--     668-   704         6                                                                        0.9998 0.9611
+--     705-   742         0                                                                        0.0000 0.0000
+--     743-   781         1                                                                        0.9999 0.9622
+--
+--           0 (max occurrences)
+--     3826529 (total mers, non-unique)
+--      395619 (distinct mers, non-unique)
+--           0 (unique mers)
+-- Report changed.
+-- Finished stage 'meryl-process', reset canuIteration.
+--
+-- Removing meryl database 'correction/0-mercounts/Sars_cov_2_SRR11178051.ms16'.
+--
+-- OVERLAPPER (mhap) (correction)
+--
+-- Set corMhapSensitivity=low based on read coverage of 200.
+--
+-- PARAMETERS: hashes=256, minMatches=3, threshold=0.8
+--
+-- Given 5.4 GB, can fit 16200 reads per block.
+-- For 4 blocks, set stride to 2 blocks.
+-- Logging partitioning to 'correction/1-overlapper/partitioning.log'.
+-- Configured 3 mhap precompute jobs.
+-- Configured 3 mhap overlap jobs.
+-- No change in report.
+-- Finished stage 'cor-mhapConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cormhap' concurrent execution on Sun May 24 20:42:02 2020 with 47.94 GB free disk space (3 processes; 1 concurrently)
+
+    cd correction/1-overlapper
+    ./precompute.sh 1 > ./precompute.000001.out 2>&1
+    ./precompute.sh 2 > ./precompute.000002.out 2>&1
+    ./precompute.sh 3 > ./precompute.000003.out 2>&1
+
+-- Finished on Sun May 24 20:42:39 2020 (37 seconds) with 47.864 GB free disk space
+----------------------------------------
+-- All 3 mhap precompute jobs finished successfully.
+-- No change in report.
+-- Finished stage 'cor-mhapPrecomputeCheck', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cormhap' concurrent execution on Sun May 24 20:42:39 2020 with 47.864 GB free disk space (3 processes; 1 concurrently)
+
+    cd correction/1-overlapper
+    ./mhap.sh 1 > ./mhap.000001.out 2>&1
+    ./mhap.sh 2 > ./mhap.000002.out 2>&1
+    ./mhap.sh 3 > ./mhap.000003.out 2>&1
+
+-- Finished on Sun May 24 20:44:02 2020 (83 seconds) with 47.838 GB free disk space
+----------------------------------------
+-- Found 3 mhap overlap output files.
+-- No change in report.
+-- Finished stage 'cor-mhapCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:02 2020 with 47.838 GB free disk space
+
+    cd correction
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
+     -S ../Sars_cov_2_SRR11178051.seqStore \
+     -M 4-8 \
+     -L ./1-overlapper/ovljob.files \
+     -create ./Sars_cov_2_SRR11178051.ovlStore.config \
+     > ./Sars_cov_2_SRR11178051.ovlStore.config.txt \
+    2> ./Sars_cov_2_SRR11178051.ovlStore.config.err
+
+-- Finished on Sun May 24 20:44:02 2020 (fast as lightning) with 47.838 GB free disk space
+----------------------------------------
+--
+-- Creating overlap store correction/Sars_cov_2_SRR11178051.ovlStore using:
+--      2 buckets
+--      2 slices
+--        using at most 1 GB memory each
+-- No change in report.
+-- Finished stage 'cor-overlapStoreConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovB' concurrent execution on Sun May 24 20:44:02 2020 with 47.838 GB free disk space (2 processes; 2 concurrently)
+
+    cd correction/Sars_cov_2_SRR11178051.ovlStore.BUILDING
+    ./scripts/1-bucketize.sh 1 > ./logs/1-bucketize.000001.out 2>&1
+    ./scripts/1-bucketize.sh 2 > ./logs/1-bucketize.000002.out 2>&1
+
+-- Finished on Sun May 24 20:44:03 2020 (one second) with 47.786 GB free disk space
+----------------------------------------
+-- Overlap store bucketizer finished.
+-- No change in report.
+-- Finished stage 'cor-overlapStoreBucketizerCheck', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovS' concurrent execution on Sun May 24 20:44:03 2020 with 47.786 GB free disk space (2 processes; 1 concurrently)
+
+    cd correction/Sars_cov_2_SRR11178051.ovlStore.BUILDING
+    ./scripts/2-sort.sh 1 > ./logs/2-sort.000001.out 2>&1
+    ./scripts/2-sort.sh 2 > ./logs/2-sort.000002.out 2>&1
+
+-- Finished on Sun May 24 20:44:05 2020 (2 seconds) with 47.767 GB free disk space
+----------------------------------------
+-- Overlap store sorter finished.
+-- No change in report.
+-- Finished stage 'cor-overlapStoreSorterCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:05 2020 with 47.767 GB free disk space
+
+    cd correction
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
+      -O  ./Sars_cov_2_SRR11178051.ovlStore.BUILDING \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -C  ./Sars_cov_2_SRR11178051.ovlStore.config \
+      -delete \
+    > ./Sars_cov_2_SRR11178051.ovlStore.BUILDING.index.err 2>&1
+
+-- Finished on Sun May 24 20:44:05 2020 (like a bat out of hell) with 47.768 GB free disk space
+----------------------------------------
+-- Checking store.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:05 2020 with 47.768 GB free disk space
+
+    cd correction
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
+     -S ../Sars_cov_2_SRR11178051.seqStore \
+     -O  ./Sars_cov_2_SRR11178051.ovlStore \
+     -counts \
+     > ./Sars_cov_2_SRR11178051.ovlStore/counts.dat 2> ./Sars_cov_2_SRR11178051.ovlStore/counts.err
+
+-- Finished on Sun May 24 20:44:05 2020 (like a bat out of hell) with 47.767 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'correction/Sars_cov_2_SRR11178051.ovlStore' successfully constructed.
+-- Found 3563588 overlaps for 4527 reads; 39802 reads have no overlaps.
+--
+--
+-- Purged 0.102 GB in 9 overlap output files.
+-- No change in report.
+-- Finished stage 'cor-createOverlapStore', reset canuIteration.
+-- Set corMinCoverage=4 based on read coverage of 200.
+-- Global filter scores will be estimated.
+-- Computing correction layouts.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:05 2020 with 47.87 GB free disk space
+
+    cd correction
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/generateCorrectionLayouts \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -O  ./Sars_cov_2_SRR11178051.ovlStore \
+      -C  ./Sars_cov_2_SRR11178051.corStore.WORKING \
+      -eC 80 \
+    > ./Sars_cov_2_SRR11178051.corStore.err 2>&1
+
+-- Finished on Sun May 24 20:44:05 2020 (in the blink of an eye) with 47.861 GB free disk space
+----------------------------------------
+-- No change in report.
+-- Finished stage 'cor-buildCorrectionLayoutsConfigure', reset canuIteration.
+-- Computing correction layouts.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:05 2020 with 47.861 GB free disk space
+
+    cd correction/2-correction
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/filterCorrectionLayouts \
+      -S  ../../Sars_cov_2_SRR11178051.seqStore \
+      -C     ../Sars_cov_2_SRR11178051.corStore \
+      -R      ./Sars_cov_2_SRR11178051.readsToCorrect.WORKING \
+      -cc 4 \
+      -cl 1000 \
+      -g  30000 \
+      -c  40 \
+    > ./Sars_cov_2_SRR11178051.readsToCorrect.err 2>&1
+
+-- Finished on Sun May 24 20:44:05 2020 (furiously fast) with 47.857 GB free disk space
+----------------------------------------
+--                             original      original
+--                            raw reads     raw reads
+--   category                w/overlaps  w/o/overlaps
+--   -------------------- ------------- -------------
+--   Number of Reads               4463         39866
+--   Number of Bases            5925247         75544
+--   Coverage                   197.508         2.518
+--   Median                        1217             0
+--   Mean                          1327             1
+--   N50                           1280          1157
+--   Minimum                       1000             0
+--   Maximum                       4704          2093
+--   
+--                                        --------corrected---------  ----------rescued----------
+--                             evidence                     expected                     expected
+--   category                     reads            raw     corrected            raw     corrected
+--   -------------------- -------------  ------------- -------------  ------------- -------------
+--   Number of Reads               4079            639           639            394           394
+--   Number of Bases            5488886        1244553       1201330         448618        440790
+--   Coverage                   182.963         41.485        40.044         14.954        14.693
+--   Median                        1234           1822          1790           1112          1100
+--   Mean                          1345           1947          1880           1138          1118
+--   N50                           1306           1876          1828           1116          1105
+--   Minimum                       1000           1573          1572           1009          1001
+--   Maximum                       4704           4704          3654           2078          1525
+--   
+--                        --------uncorrected--------
+--                                           expected
+--   category                       raw     corrected
+--   -------------------- ------------- -------------
+--   Number of Reads              43296         43296
+--   Number of Bases            4307620       3718364
+--   Coverage                   143.587       123.945
+--   Median                           0             0
+--   Mean                            99            85
+--   N50                           1219          1185
+--   Minimum                          0             0
+--   Maximum                       3849          3769
+--   
+--   Maximum Memory           569861408
+-- Report changed.
+-- Finished stage 'cor-filterCorrectionLayouts', reset canuIteration.
+-- Using overlaps no worse than 0.5 fraction error for correcting reads (from corErrorRate parameter).
+--
+-- Configuring correction jobs:
+--   Jobs limited to 8 GB per job (via option corMemory).
+--   Reads estimated to need at most 1 GB for computation.
+--   Leaving 7 GB memory for read data.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:05 2020 with 47.857 GB free disk space
+
+    cd correction/2-correction
+    ./correctReadsPartition.sh \
+    > ./correctReadsPartition.err 2>&1
+
+-- Finished on Sun May 24 20:44:06 2020 (one second) with 47.857 GB free disk space
+----------------------------------------
+-- Using overlaps no worse than 0.5 fraction error for correcting reads (from corErrorRate parameter).
+-- No change in report.
+-- Finished stage 'cor-generateCorrectedReadsConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cor' concurrent execution on Sun May 24 20:44:06 2020 with 47.857 GB free disk space (1 processes; 1 concurrently)
+
+    cd correction/2-correction
+    ./correctReads.sh 1 > ./correctReads.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:31 2020 (25 seconds) with 47.852 GB free disk space
+----------------------------------------
+-- Found 1 read correction output files.
+-- No change in report.
+-- Finished stage 'cor-generateCorrectedReadsCheck', reset canuIteration.
+-- Found 1 read correction output files.
+-- No change in report.
+-- Finished stage 'cor-generateCorrectedReadsCheck', reset canuIteration.
+--
+-- Loading corrected reads into corStore and seqStore.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:31 2020 with 47.852 GB free disk space
+
+    cd correction
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/loadCorrectedReads \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -C ./Sars_cov_2_SRR11178051.corStore \
+      -L ./2-correction/corjob.files \
+    >  ./Sars_cov_2_SRR11178051.loadCorrectedReads.log \
+    2> ./Sars_cov_2_SRR11178051.loadCorrectedReads.err
+
+-- Finished on Sun May 24 20:44:31 2020 (fast as lightning) with 47.848 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:44:31 2020 with 47.848 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -corrected \
+      -histogram \
+      -lengths \
+    > ./Sars_cov_2_SRR11178051.seqStore/readlengths-obt.dat \
+    2> ./Sars_cov_2_SRR11178051.seqStore/readlengths-obt.err 
+    
+
+-- Finished on Sun May 24 20:44:31 2020 (furiously fast) with 47.848 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:44:32 2020 with 47.848 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -corrected \
+      -histogram \
+    > ./Sars_cov_2_SRR11178051.seqStore/readlengths-obt.txt \
+    2> ./Sars_cov_2_SRR11178051.seqStore/readlengths-obt.err 
+    
+
+-- Finished on Sun May 24 20:44:32 2020 (in the blink of an eye) with 47.848 GB free disk space
+----------------------------------------
+--
+-- In sequence store './Sars_cov_2_SRR11178051.seqStore':
+--   Found 1027 reads.
+--   Found 1594916 bases (53.16 times coverage).
+--    
+--    G=1594916                          sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010         2280        61       161661  ||        409-471             1|-
+--    00020         2027       135       319895  ||        472-534             1|-
+--    00030         1877       217       479325  ||        535-597             2|--
+--    00040         1778       304       638095  ||        598-660             0|
+--    00050         1677       397       798883  ||        661-723             2|--
+--    00060         1611       494       957841  ||        724-786             4|---
+--    00070         1520       595      1116892  ||        787-849             3|--
+--    00080         1161       719      1276740  ||        850-912             8|-----
+--    00090         1057       863      1435470  ||        913-975            26|----------------
+--    00100          409      1026      1594916  ||        976-1038           82|------------------------------------------------
+--    001.000x                1027      1594916  ||       1039-1101          109|---------------------------------------------------------------
+--                                               ||       1102-1164           75|--------------------------------------------
+--                                               ||       1165-1227           47|----------------------------
+--                                               ||       1228-1290           26|----------------
+--                                               ||       1291-1353           12|-------
+--                                               ||       1354-1416            8|-----
+--                                               ||       1417-1479            6|----
+--                                               ||       1480-1542           33|--------------------
+--                                               ||       1543-1605           80|-----------------------------------------------
+--                                               ||       1606-1668           95|-------------------------------------------------------
+--                                               ||       1669-1731           56|---------------------------------
+--                                               ||       1732-1794           64|-------------------------------------
+--                                               ||       1795-1857           52|-------------------------------
+--                                               ||       1858-1920           44|--------------------------
+--                                               ||       1921-1983           36|---------------------
+--                                               ||       1984-2046           25|---------------
+--                                               ||       2047-2109           22|-------------
+--                                               ||       2110-2172           23|--------------
+--                                               ||       2173-2235           14|---------
+--                                               ||       2236-2298           11|-------
+--                                               ||       2299-2361            8|-----
+--                                               ||       2362-2424           10|------
+--                                               ||       2425-2487            7|-----
+--                                               ||       2488-2550            6|----
+--                                               ||       2551-2613            3|--
+--                                               ||       2614-2676            7|-----
+--                                               ||       2677-2739            2|--
+--                                               ||       2740-2802            4|---
+--                                               ||       2803-2865            5|---
+--                                               ||       2866-2928            1|-
+--                                               ||       2929-2991            1|-
+--                                               ||       2992-3054            1|-
+--                                               ||       3055-3117            0|
+--                                               ||       3118-3180            2|--
+--                                               ||       3181-3243            0|
+--                                               ||       3244-3306            0|
+--                                               ||       3307-3369            0|
+--                                               ||       3370-3432            2|--
+--                                               ||       3433-3495            0|
+--                                               ||       3496-3558            1|-
+--    
+--
+-- Purging correctReads output after loading into stores.
+-- Purged 1 .cns outputs.
+-- Purged 2 .out job log outputs.
+--
+-- Purging overlaps used for correction.
+-- Report changed.
+-- Finished stage 'cor-loadCorrectedReads', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:32 2020 with 47.924 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpFASTQ \
+      -corrected \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -o ./Sars_cov_2_SRR11178051.correctedReads.gz \
+      -fasta \
+      -nolibname \
+    > Sars_cov_2_SRR11178051.correctedReads.fasta.err 2>&1
+
+-- Finished on Sun May 24 20:44:32 2020 (like a bat out of hell) with 47.923 GB free disk space
+----------------------------------------
+--
+-- Corrected reads saved in 'Sars_cov_2_SRR11178051.correctedReads.fasta.gz'.
+-- No change in report.
+-- Finished stage 'cor-dumpCorrectedReads', reset canuIteration.
+--
+--
+-- BEGIN TRIMMING
+--
+-- No change in report.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:32 2020 with 47.923 GB free disk space
+
+    cd trimming/0-mercounts
+    ./meryl-configure.sh \
+    > ./meryl-configure.err 2>&1
+
+-- Finished on Sun May 24 20:44:32 2020 (fast as lightning) with 47.923 GB free disk space
+----------------------------------------
+--  segments   memory batches
+--  -------- -------- -------
+--        01  0.07 GB       1
+--
+--  For 1027 reads with 1594916 bases, limit to 1 batch.
+--  Will count kmers using 01 jobs, each using 2 GB and 4 threads.
+--
+-- No change in report.
+-- Finished stage 'merylConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Sun May 24 20:44:32 2020 with 47.923 GB free disk space (1 processes; 1 concurrently)
+
+    cd trimming/0-mercounts
+    ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:33 2020 (one second) with 47.922 GB free disk space
+----------------------------------------
+-- Found 1 Kmer counting (meryl) outputs.
+-- No change in report.
+-- Finished stage 'obt-merylCountCheck', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Sun May 24 20:44:33 2020 with 47.922 GB free disk space (1 processes; 1 concurrently)
+
+    cd trimming/0-mercounts
+    ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:35 2020 (2 seconds) with 47.922 GB free disk space
+----------------------------------------
+-- Meryl finished successfully.  Kmer frequency histogram:
+--
+--  22-mers                                                                                           Fraction
+--    Occurrences   NumMers                                                                         Unique Total
+--       1-     1         0                                                                        0.0000 0.0000
+--       2-     2      8663 ********************************************************************** 0.1668 0.0118
+--       3-     4      6051 ************************************************                       0.2407 0.0196
+--       5-     7      2570 ********************                                                   0.3087 0.0301
+--       8-    11      1675 *************                                                          0.3425 0.0382
+--      12-    16      1814 **************                                                         0.3698 0.0480
+--      17-    22      4765 **************************************                                 0.4144 0.0723
+--      23-    29      6518 ****************************************************                   0.5093 0.1414
+--      30-    37      7000 ********************************************************               0.6367 0.2631
+--      38-    46      3412 ***************************                                            0.7650 0.4175
+--      47-    56      2736 **********************                                                 0.8282 0.5141
+--      57-    67      1502 ************                                                           0.8735 0.5976
+--      68-    79      2467 *******************                                                    0.9016 0.6597
+--      80-    92       669 *****                                                                  0.9486 0.7828
+--      93-   106       953 *******                                                                0.9608 0.8202
+--     107-   121       332 **                                                                     0.9786 0.8834
+--     122-   137       253 **                                                                     0.9846 0.9073
+--     138-   154       346 **                                                                     0.9894 0.9292
+--     155-   172       170 *                                                                      0.9961 0.9641
+--     173-   191         2                                                                        0.9991 0.9810
+--     192-   211         0                                                                        0.0000 0.0000
+--     212-   232         2                                                                        0.9991 0.9813
+--     233-   254         9                                                                        0.9991 0.9816
+--     255-   277         6                                                                        0.9993 0.9831
+--     278-   301         3                                                                        0.9994 0.9842
+--     302-   326         1                                                                        0.9995 0.9848
+--     327-   352         1                                                                        0.9995 0.9850
+--     353-   379         0                                                                        0.0000 0.0000
+--     380-   407         0                                                                        0.0000 0.0000
+--     408-   436         0                                                                        0.0000 0.0000
+--     437-   466         0                                                                        0.0000 0.0000
+--     467-   497         0                                                                        0.0000 0.0000
+--     498-   529         0                                                                        0.0000 0.0000
+--     530-   562         0                                                                        0.0000 0.0000
+--     563-   596         1                                                                        0.9995 0.9854
+--     597-   631         1                                                                        0.9995 0.9858
+--     632-   667         0                                                                        0.0000 0.0000
+--     668-   704         3                                                                        0.9996 0.9863
+--     705-   742         0                                                                        0.0000 0.0000
+--     743-   781         1                                                                        0.9996 0.9878
+--     782-   821         2                                                                        0.9996 0.9883
+--
+--           0 (max occurrences)
+--     1473201 (total mers, non-unique)
+--       51946 (distinct mers, non-unique)
+--           0 (unique mers)
+-- Report changed.
+-- Finished stage 'meryl-process', reset canuIteration.
+--
+-- Removing meryl database 'trimming/0-mercounts/Sars_cov_2_SRR11178051.ms22'.
+--
+-- OVERLAPPER (normal) (trimming) erate=0.12
+--
+----------------------------------------
+-- Starting command on Sun May 24 20:44:35 2020 with 47.923 GB free disk space
+
+    cd trimming/1-overlapper
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/overlapInCorePartition \
+     -S  ../../Sars_cov_2_SRR11178051.seqStore \
+     -hl 80000000 \
+     -rl 1000000000 \
+     -ol 500 \
+     -o  ./Sars_cov_2_SRR11178051.partition \
+    > ./Sars_cov_2_SRR11178051.partition.err 2>&1
+
+-- Finished on Sun May 24 20:44:35 2020 (lickety-split) with 47.923 GB free disk space
+----------------------------------------
+--
+-- Configured 1 overlapInCore jobs.
+-- No change in report.
+-- Finished stage 'obt-overlapConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'obtovl' concurrent execution on Sun May 24 20:44:35 2020 with 47.923 GB free disk space (1 processes; 1 concurrently)
+
+    cd trimming/1-overlapper
+    ./overlap.sh 1 > ./overlap.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:42 2020 (7 seconds) with 47.922 GB free disk space
+----------------------------------------
+-- Found 1 overlapInCore output files.
+--
+-- overlapInCore compute 'trimming/1-overlapper':
+--   kmer hits
+--     with no overlap           600449      600449 +- 0
+--     with an overlap            43541       43541 +- 0
+--
+--   overlaps                     43541       43541 +- 0
+--     contained                      0           0 +- 0
+--     dovetail                       0           0 +- 0
+--
+--   overlaps rejected
+--     multiple per pair              0           0 +- 0
+--     bad short window               0           0 +- 0
+--     bad long window                0           0 +- 0
+-- No change in report.
+-- Finished stage 'obt-overlapCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:42 2020 with 47.922 GB free disk space
+
+    cd trimming
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
+     -S ../Sars_cov_2_SRR11178051.seqStore \
+     -M 3 \
+     -L ./1-overlapper/ovljob.files \
+     -create ./Sars_cov_2_SRR11178051.ovlStore.config \
+     > ./Sars_cov_2_SRR11178051.ovlStore.config.txt \
+    2> ./Sars_cov_2_SRR11178051.ovlStore.config.err
+
+-- Finished on Sun May 24 20:44:42 2020 (furiously fast) with 47.922 GB free disk space
+----------------------------------------
+--
+-- Creating overlap store trimming/Sars_cov_2_SRR11178051.ovlStore using:
+--      1 bucket
+--      2 slices
+--        using at most 1 GB memory each
+-- No change in report.
+-- Finished stage 'obt-overlapStoreConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovB' concurrent execution on Sun May 24 20:44:42 2020 with 47.922 GB free disk space (1 processes; 2 concurrently)
+
+    cd trimming/Sars_cov_2_SRR11178051.ovlStore.BUILDING
+    ./scripts/1-bucketize.sh 1 > ./logs/1-bucketize.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:42 2020 (lickety-split) with 47.921 GB free disk space
+----------------------------------------
+-- Overlap store bucketizer finished.
+-- No change in report.
+-- Finished stage 'obt-overlapStoreBucketizerCheck', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovS' concurrent execution on Sun May 24 20:44:42 2020 with 47.921 GB free disk space (2 processes; 1 concurrently)
+
+    cd trimming/Sars_cov_2_SRR11178051.ovlStore.BUILDING
+    ./scripts/2-sort.sh 1 > ./logs/2-sort.000001.out 2>&1
+    ./scripts/2-sort.sh 2 > ./logs/2-sort.000002.out 2>&1
+
+-- Finished on Sun May 24 20:44:43 2020 (one second) with 47.916 GB free disk space
+----------------------------------------
+-- Overlap store sorter finished.
+-- No change in report.
+-- Finished stage 'obt-overlapStoreSorterCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:43 2020 with 47.916 GB free disk space
+
+    cd trimming
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
+      -O  ./Sars_cov_2_SRR11178051.ovlStore.BUILDING \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -C  ./Sars_cov_2_SRR11178051.ovlStore.config \
+      -delete \
+    > ./Sars_cov_2_SRR11178051.ovlStore.BUILDING.index.err 2>&1
+
+-- Finished on Sun May 24 20:44:43 2020 (fast as lightning) with 47.917 GB free disk space
+----------------------------------------
+-- Checking store.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:43 2020 with 47.917 GB free disk space
+
+    cd trimming
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
+     -S ../Sars_cov_2_SRR11178051.seqStore \
+     -O  ./Sars_cov_2_SRR11178051.ovlStore \
+     -counts \
+     > ./Sars_cov_2_SRR11178051.ovlStore/counts.dat 2> ./Sars_cov_2_SRR11178051.ovlStore/counts.err
+
+-- Finished on Sun May 24 20:44:43 2020 (fast as lightning) with 47.917 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'trimming/Sars_cov_2_SRR11178051.ovlStore' successfully constructed.
+-- Found 87082 overlaps for 1011 reads; 43318 reads have no overlaps.
+--
+--
+-- Purged 0 GB in 3 overlap output files.
+-- No change in report.
+-- Finished stage 'obt-createOverlapStore', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:43 2020 with 47.918 GB free disk space
+
+    cd trimming/3-overlapbasedtrimming
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/trimReads \
+      -S  ../../Sars_cov_2_SRR11178051.seqStore \
+      -O  ../Sars_cov_2_SRR11178051.ovlStore \
+      -Co ./Sars_cov_2_SRR11178051.1.trimReads.clear \
+      -e  0.12 \
+      -minlength 1000 \
+      -ol 500 \
+      -oc 2 \
+      -o  ./Sars_cov_2_SRR11178051.1.trimReads \
+    >     ./Sars_cov_2_SRR11178051.1.trimReads.err 2>&1
+
+-- Finished on Sun May 24 20:44:44 2020 (one second) with 47.916 GB free disk space
+----------------------------------------
+--  PARAMETERS:
+--  ----------
+--     1000    (reads trimmed below this many bases are deleted)
+--   0.1200    (use overlaps at or below this fraction error)
+--      500    (break region if overlap is less than this long, for 'largest covered' algorithm)
+--        2    (break region if overlap coverage is less than this many reads, for 'largest covered' algorithm)
+--  
+--  INPUT READS:
+--  -----------
+--   44329 reads      1594916 bases (reads processed)
+--       0 reads            0 bases (reads not processed, previously deleted)
+--       0 reads            0 bases (reads not processed, in a library where trimming isn't allowed)
+--  
+--  OUTPUT READS:
+--  ------------
+--     756 reads      1229043 bases (trimmed reads output)
+--     134 reads       183031 bases (reads with no change, kept as is)
+--   43318 reads        14442 bases (reads with no overlaps, deleted)
+--     121 reads       126240 bases (reads with short trimmed length, deleted)
+--  
+--  TRIMMING DETAILS:
+--  ----------------
+--     558 reads        24276 bases (bases trimmed from the 5' end of a read)
+--     571 reads        17884 bases (bases trimmed from the 3' end of a read)
+-- Report changed.
+-- Finished stage 'obt-trimReads', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:44 2020 with 47.916 GB free disk space
+
+    cd trimming/3-overlapbasedtrimming
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/splitReads \
+      -S  ../../Sars_cov_2_SRR11178051.seqStore \
+      -O  ../Sars_cov_2_SRR11178051.ovlStore \
+      -Ci ./Sars_cov_2_SRR11178051.1.trimReads.clear \
+      -Co ./Sars_cov_2_SRR11178051.2.splitReads.clear \
+      -e  0.12 \
+      -minlength 1000 \
+      -o  ./Sars_cov_2_SRR11178051.2.splitReads \
+    >     ./Sars_cov_2_SRR11178051.2.splitReads.err 2>&1
+
+-- Finished on Sun May 24 20:44:44 2020 (lickety-split) with 47.916 GB free disk space
+----------------------------------------
+--  PARAMETERS:
+--  ----------
+--     1000    (reads trimmed below this many bases are deleted)
+--   0.1200    (use overlaps at or below this fraction error)
+--  INPUT READS:
+--  -----------
+--     890 reads      1454234 bases (reads processed)
+--   43439 reads       140682 bases (reads not processed, previously deleted)
+--       0 reads            0 bases (reads not processed, in a library where trimming isn't allowed)
+--  
+--  PROCESSED:
+--  --------
+--       0 reads            0 bases (no overlaps)
+--       0 reads            0 bases (no coverage after adjusting for trimming done already)
+--       0 reads            0 bases (processed for chimera)
+--       0 reads            0 bases (processed for spur)
+--     890 reads      1454234 bases (processed for subreads)
+--  
+--  READS WITH SIGNALS:
+--  ------------------
+--       0 reads            0 signals (number of 5' spur signal)
+--       0 reads            0 signals (number of 3' spur signal)
+--       0 reads            0 signals (number of chimera signal)
+--       0 reads            0 signals (number of subread signal)
+--  
+--  SIGNALS:
+--  -------
+--       0 reads            0 bases (size of 5' spur signal)
+--       0 reads            0 bases (size of 3' spur signal)
+--       0 reads            0 bases (size of chimera signal)
+--       0 reads            0 bases (size of subread signal)
+--  
+--  TRIMMING:
+--  --------
+--       0 reads            0 bases (trimmed from the 5' end of the read)
+--       0 reads            0 bases (trimmed from the 3' end of the read)
+-- Report changed.
+-- Finished stage 'obt-splitReads', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:44 2020 with 47.916 GB free disk space
+
+    cd trimming/3-overlapbasedtrimming
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/loadTrimmedReads \
+      -S ../../Sars_cov_2_SRR11178051.seqStore \
+      -c ./Sars_cov_2_SRR11178051.2.splitReads.clear \
+    > ./Sars_cov_2_SRR11178051.loadTrimmedReads.err 2>&1
+
+-- Finished on Sun May 24 20:44:44 2020 (lickety-split) with 47.913 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:44:44 2020 with 47.913 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -corrected -trimmed \
+      -histogram \
+      -lengths \
+    > ./Sars_cov_2_SRR11178051.seqStore/readlengths-utg.dat \
+    2> ./Sars_cov_2_SRR11178051.seqStore/readlengths-utg.err 
+    
+
+-- Finished on Sun May 24 20:44:44 2020 (in the blink of an eye) with 47.913 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:44:44 2020 with 47.913 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -corrected -trimmed \
+      -histogram \
+    > ./Sars_cov_2_SRR11178051.seqStore/readlengths-utg.txt \
+    2> ./Sars_cov_2_SRR11178051.seqStore/readlengths-utg.err 
+    
+
+-- Finished on Sun May 24 20:44:44 2020 (like a bat out of hell) with 47.913 GB free disk space
+----------------------------------------
+--
+-- In sequence store './Sars_cov_2_SRR11178051.seqStore':
+--   Found 890 reads.
+--   Found 1412074 bases (47.06 times coverage).
+--    
+--    G=1412074                          sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010         2265        54       141305  ||       1000-1050           62|------------------------------------------------
+--    00020         2002       121       283247  ||       1051-1101           83|---------------------------------------------------------------
+--    00030         1863       195       425473  ||       1102-1152           56|-------------------------------------------
+--    00040         1756       273       566323  ||       1153-1203           41|--------------------------------
+--    00050         1668       355       706390  ||       1204-1254           18|--------------
+--    00060         1584       443       848720  ||       1255-1305           17|-------------
+--    00070         1520       533       988494  ||       1306-1356            7|------
+--    00080         1250       632      1129739  ||       1357-1407            5|----
+--    00090         1096       755      1271113  ||       1408-1458            7|------
+--    00100         1000       889      1412074  ||       1459-1509           43|---------------------------------
+--    001.000x                 890      1412074  ||       1510-1560           70|------------------------------------------------------
+--                                               ||       1561-1611           73|--------------------------------------------------------
+--                                               ||       1612-1662           51|---------------------------------------
+--                                               ||       1663-1713           47|------------------------------------
+--                                               ||       1714-1764           43|---------------------------------
+--                                               ||       1765-1815           42|--------------------------------
+--                                               ||       1816-1866           31|------------------------
+--                                               ||       1867-1917           33|--------------------------
+--                                               ||       1918-1968           27|---------------------
+--                                               ||       1969-2019           16|-------------
+--                                               ||       2020-2070           18|--------------
+--                                               ||       2071-2121           17|-------------
+--                                               ||       2122-2172           10|--------
+--                                               ||       2173-2223           11|---------
+--                                               ||       2224-2274            8|-------
+--                                               ||       2275-2325            5|----
+--                                               ||       2326-2376            7|------
+--                                               ||       2377-2427            9|-------
+--                                               ||       2428-2478            5|----
+--                                               ||       2479-2529            1|-
+--                                               ||       2530-2580            7|------
+--                                               ||       2581-2631            3|---
+--                                               ||       2632-2682            2|--
+--                                               ||       2683-2733            4|----
+--                                               ||       2734-2784            3|---
+--                                               ||       2785-2835            2|--
+--                                               ||       2836-2886            1|-
+--                                               ||       2887-2937            0|
+--                                               ||       2938-2988            0|
+--                                               ||       2989-3039            1|-
+--                                               ||       3040-3090            0|
+--                                               ||       3091-3141            2|--
+--                                               ||       3142-3192            0|
+--                                               ||       3193-3243            0|
+--                                               ||       3244-3294            0|
+--                                               ||       3295-3345            0|
+--                                               ||       3346-3396            1|-
+--                                               ||       3397-3447            0|
+--                                               ||       3448-3498            0|
+--                                               ||       3499-3549            1|-
+--    
+--
+-- Purging overlaps used for trimming.
+-- Report changed.
+-- Finished stage 'obt-dumpReads', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:44 2020 with 47.919 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpFASTQ \
+      -trimmed \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -o ./Sars_cov_2_SRR11178051.trimmedReads.gz \
+      -fasta \
+      -trimmed -normal -nolibname \
+    > ./Sars_cov_2_SRR11178051.trimmedReads.fasta.err 2>&1
+
+-- Finished on Sun May 24 20:44:44 2020 (lickety-split) with 47.918 GB free disk space
+----------------------------------------
+--
+-- Trimmed reads saved in 'Sars_cov_2_SRR11178051.trimmedReads.fasta.gz'.
+-- No change in report.
+-- Finished stage 'cor-dumpTrimmedReads', reset canuIteration.
+--
+--
+-- BEGIN ASSEMBLY
+--
+-- No change in report.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:44 2020 with 47.918 GB free disk space
+
+    cd unitigging/0-mercounts
+    ./meryl-configure.sh \
+    > ./meryl-configure.err 2>&1
+
+-- Finished on Sun May 24 20:44:45 2020 (one second) with 47.918 GB free disk space
+----------------------------------------
+--  segments   memory batches
+--  -------- -------- -------
+--        01  0.07 GB       1
+--
+--  For 890 reads with 1412074 bases, limit to 1 batch.
+--  Will count kmers using 01 jobs, each using 2 GB and 4 threads.
+--
+-- No change in report.
+-- Finished stage 'merylConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Sun May 24 20:44:45 2020 with 47.918 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/0-mercounts
+    ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:46 2020 (one second) with 47.917 GB free disk space
+----------------------------------------
+-- Found 1 Kmer counting (meryl) outputs.
+-- No change in report.
+-- Finished stage 'utg-merylCountCheck', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'meryl' concurrent execution on Sun May 24 20:44:46 2020 with 47.917 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/0-mercounts
+    ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:47 2020 (one second) with 47.917 GB free disk space
+----------------------------------------
+-- Meryl finished successfully.  Kmer frequency histogram:
+--
+--  22-mers                                                                                           Fraction
+--    Occurrences   NumMers                                                                         Unique Total
+--       1-     1         0                                                                        0.0000 0.0000
+--       2-     2      5681 *******************************************************                0.1251 0.0084
+--       3-     4      3837 *************************************                                  0.1813 0.0141
+--       5-     7      2006 *******************                                                    0.2308 0.0215
+--       8-    11      1629 ***************                                                        0.2655 0.0297
+--      12-    16      1964 *******************                                                    0.2989 0.0414
+--      17-    22      4503 *******************************************                            0.3492 0.0674
+--      23-    29      6702 *****************************************************************      0.4518 0.1389
+--      30-    37      7178 ********************************************************************** 0.6066 0.2808
+--      38-    46      3179 *******************************                                        0.7503 0.4461
+--      47-    56      2445 ***********************                                                0.8187 0.5472
+--      57-    67      2547 ************************                                               0.8664 0.6319
+--      68-    79      1564 ***************                                                        0.9221 0.7500
+--      80-    92      1156 ***********                                                            0.9533 0.8265
+--      93-   106       124 *                                                                      0.9778 0.8981
+--     107-   121       312 ***                                                                    0.9809 0.9089
+--     122-   137       288 **                                                                     0.9875 0.9346
+--     138-   154       258 **                                                                     0.9940 0.9633
+--     155-   172         2                                                                        0.9994 0.9896
+--     173-   191         1                                                                        0.9994 0.9899
+--     192-   211         1                                                                        0.9994 0.9900
+--     212-   232         0                                                                        0.0000 0.0000
+--     233-   254         0                                                                        0.0000 0.0000
+--     255-   277         0                                                                        0.0000 0.0000
+--     278-   301         0                                                                        0.0000 0.0000
+--     302-   326         1                                                                        0.9994 0.9902
+--     327-   352         0                                                                        0.0000 0.0000
+--     353-   379         1                                                                        0.9995 0.9905
+--     380-   407         1                                                                        0.9995 0.9908
+--     408-   436         2                                                                        0.9995 0.9911
+--     437-   466         1                                                                        0.9996 0.9917
+--     467-   497         2                                                                        0.9996 0.9921
+--     498-   529         2                                                                        0.9996 0.9928
+--     530-   562         6                                                                        0.9997 0.9936
+--     563-   596         9                                                                        0.9998 0.9961
+--     597-   631         1                                                                        1.0000 1.0000
+--
+--           0 (max occurrences)
+--     1345624 (total mers, non-unique)
+--       45403 (distinct mers, non-unique)
+--           0 (unique mers)
+-- Report changed.
+-- Finished stage 'meryl-process', reset canuIteration.
+--
+-- Removing meryl database 'unitigging/0-mercounts/Sars_cov_2_SRR11178051.ms22'.
+--
+-- OVERLAPPER (normal) (assembly) erate=0.12
+--
+----------------------------------------
+-- Starting command on Sun May 24 20:44:47 2020 with 47.918 GB free disk space
+
+    cd unitigging/1-overlapper
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/overlapInCorePartition \
+     -S  ../../Sars_cov_2_SRR11178051.seqStore \
+     -hl 80000000 \
+     -rl 1000000000 \
+     -ol 500 \
+     -o  ./Sars_cov_2_SRR11178051.partition \
+    > ./Sars_cov_2_SRR11178051.partition.err 2>&1
+
+-- Finished on Sun May 24 20:44:47 2020 (furiously fast) with 47.918 GB free disk space
+----------------------------------------
+--
+-- Configured 1 overlapInCore jobs.
+-- No change in report.
+-- Finished stage 'utg-overlapConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'utgovl' concurrent execution on Sun May 24 20:44:47 2020 with 47.918 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/1-overlapper
+    ./overlap.sh 1 > ./overlap.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:52 2020 (5 seconds) with 47.917 GB free disk space
+----------------------------------------
+-- Found 1 overlapInCore output files.
+--
+-- overlapInCore compute 'unitigging/1-overlapper':
+--   kmer hits
+--     with no overlap           213798      213798 +- 0
+--     with an overlap            34639       34639 +- 0
+--
+--   overlaps                     34639       34639 +- 0
+--     contained                  10968       10968 +- 0
+--     dovetail                   23671       23671 +- 0
+--
+--   overlaps rejected
+--     multiple per pair              0           0 +- 0
+--     bad short window               0           0 +- 0
+--     bad long window                0           0 +- 0
+-- No change in report.
+-- Finished stage 'utg-overlapCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:52 2020 with 47.917 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
+     -S ../Sars_cov_2_SRR11178051.seqStore \
+     -M 3 \
+     -L ./1-overlapper/ovljob.files \
+     -create ./Sars_cov_2_SRR11178051.ovlStore.config \
+     > ./Sars_cov_2_SRR11178051.ovlStore.config.txt \
+    2> ./Sars_cov_2_SRR11178051.ovlStore.config.err
+
+-- Finished on Sun May 24 20:44:52 2020 (lickety-split) with 47.917 GB free disk space
+----------------------------------------
+--
+-- Creating overlap store unitigging/Sars_cov_2_SRR11178051.ovlStore using:
+--      1 bucket
+--      2 slices
+--        using at most 1 GB memory each
+-- No change in report.
+-- Finished stage 'utg-overlapStoreConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovB' concurrent execution on Sun May 24 20:44:52 2020 with 47.917 GB free disk space (1 processes; 2 concurrently)
+
+    cd unitigging/Sars_cov_2_SRR11178051.ovlStore.BUILDING
+    ./scripts/1-bucketize.sh 1 > ./logs/1-bucketize.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:52 2020 (like a bat out of hell) with 47.916 GB free disk space
+----------------------------------------
+-- Overlap store bucketizer finished.
+-- No change in report.
+-- Finished stage 'utg-overlapStoreBucketizerCheck', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'ovS' concurrent execution on Sun May 24 20:44:52 2020 with 47.916 GB free disk space (2 processes; 1 concurrently)
+
+    cd unitigging/Sars_cov_2_SRR11178051.ovlStore.BUILDING
+    ./scripts/2-sort.sh 1 > ./logs/2-sort.000001.out 2>&1
+    ./scripts/2-sort.sh 2 > ./logs/2-sort.000002.out 2>&1
+
+-- Finished on Sun May 24 20:44:53 2020 (one second) with 47.911 GB free disk space
+----------------------------------------
+-- Overlap store sorter finished.
+-- No change in report.
+-- Finished stage 'utg-overlapStoreSorterCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:53 2020 with 47.911 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
+      -O  ./Sars_cov_2_SRR11178051.ovlStore.BUILDING \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -C  ./Sars_cov_2_SRR11178051.ovlStore.config \
+      -delete \
+    > ./Sars_cov_2_SRR11178051.ovlStore.BUILDING.index.err 2>&1
+
+-- Finished on Sun May 24 20:44:53 2020 (lickety-split) with 47.912 GB free disk space
+----------------------------------------
+-- Checking store.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:53 2020 with 47.912 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
+     -S ../Sars_cov_2_SRR11178051.seqStore \
+     -O  ./Sars_cov_2_SRR11178051.ovlStore \
+     -counts \
+     > ./Sars_cov_2_SRR11178051.ovlStore/counts.dat 2> ./Sars_cov_2_SRR11178051.ovlStore/counts.err
+
+-- Finished on Sun May 24 20:44:53 2020 (furiously fast) with 47.912 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'unitigging/Sars_cov_2_SRR11178051.ovlStore' successfully constructed.
+-- Found 69278 overlaps for 890 reads; 43439 reads have no overlaps.
+--
+--
+-- Purged 0 GB in 3 overlap output files.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:53 2020 with 47.913 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreStats \
+     -C 47 \
+     -S ../Sars_cov_2_SRR11178051.seqStore \
+     -O  ./Sars_cov_2_SRR11178051.ovlStore \
+     -o  ./Sars_cov_2_SRR11178051.ovlStore \
+     > ./Sars_cov_2_SRR11178051.ovlStore.summary.err 2>&1
+
+-- Finished on Sun May 24 20:44:53 2020 (in the blink of an eye) with 47.913 GB free disk space
+----------------------------------------
+--
+-- Overlap store 'unitigging/Sars_cov_2_SRR11178051.ovlStore' contains:
+--
+--   category            reads     %          read length        feature size or coverage  analysis
+--   ----------------  -------  -------  ----------------------  ------------------------  --------------------
+--   middle-missing          0    0.00        0.00 +- 0.00             0.00 +- 0.00       (bad trimming)
+--   middle-hump             0    0.00        0.00 +- 0.00             0.00 +- 0.00       (bad trimming)
+--   no-5-prime              3    0.34     1632.00 +- 475.26           0.00 +- 0.00       (bad trimming)
+--   no-3-prime              3    0.34     1225.00 +- 161.00           5.67 +- 8.96       (bad trimming)
+--   
+--   low-coverage           13    1.46     1148.31 +- 102.66          10.37 +- 3.63       (easy to assemble, potential for lower quality consensus)
+--   unique                401   45.06     1630.07 +- 401.37          41.99 +- 15.14      (easy to assemble, perfect, yay)
+--   repeat-cont            27    3.03     1066.67 +- 42.70          135.23 +- 10.71      (potential for consensus errors, no impact on assembly)
+--   repeat-dove             0    0.00        0.00 +- 0.00             0.00 +- 0.00       (hard to assemble, likely won't assemble correctly or even at all)
+--   
+--   span-repeat           158   17.75     1482.44 +- 414.62         723.33 +- 445.58     (read spans a large repeat, usually easy to assemble)
+--   uniq-repeat-cont      225   25.28     1544.12 +- 343.25                              (should be uniquely placed, low potential for consensus errors, no impact on assembly)
+--   uniq-repeat-dove       60    6.74     2074.38 +- 404.95                              (will end contigs, potential to misassemble)
+--   uniq-anchor             0    0.00        0.00 +- 0.00             0.00 +- 0.00       (repeat read, with unique section, probable bad read)
+-- Report changed.
+-- Finished stage 'utg-createOverlapStore', reset canuIteration.
+--
+-- Loading read lengths.
+-- Loading number of overlaps per read.
+--
+-- Configure RED for 8gb memory.
+--                   Batches of at most (unlimited) reads.
+--                                      500000000 bases.
+--                   Expecting evidence of at most 536870912 bases per iteration.
+--
+--           Total                                               Reads                 Olaps Evidence
+--    Job   Memory      Read Range         Reads        Bases   Memory        Olaps   Memory   Memory  (Memory in MB)
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--      1  3262.37         1-44329          1027      1552756   189.58        69278     0.79  1024.00
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--                                                    1552756                 69278
+-- No change in report.
+-- Finished stage 'readErrorDetectionConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'red' concurrent execution on Sun May 24 20:44:54 2020 with 47.913 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/3-overlapErrorAdjustment
+    ./red.sh 1 > ./red.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:55 2020 (one second) with 47.913 GB free disk space
+----------------------------------------
+-- Found 1 read error detection output files.
+-- No change in report.
+-- Finished stage 'readErrorDetectionCheck', reset canuIteration.
+--
+-- Loading read lengths.
+-- Loading number of overlaps per read.
+--
+-- Configure OEA for 8gb memory.
+--                   Batches of at most (unlimited) reads.
+--                                      300000000 bases.
+--
+--           Total                                               Reads                 Olaps  Adjusts
+--    Job   Memory      Read Range         Reads        Bases   Memory        Olaps   Memory   Memory  (Memory in MB)
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--      1  2380.76         1-44329          1027      1552756     9.51        69278     2.11   321.13
+--   ---- -------- ------------------- --------- ------------ -------- ------------ -------- --------
+--                                                    1552756                 69278
+-- No change in report.
+-- Finished stage 'overlapErrorAdjustmentConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'oea' concurrent execution on Sun May 24 20:44:55 2020 with 47.913 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/3-overlapErrorAdjustment
+    ./oea.sh 1 > ./oea.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:57 2020 (2 seconds) with 47.912 GB free disk space
+----------------------------------------
+-- Found 1 overlap error adjustment output files.
+-- No change in report.
+-- Finished stage 'overlapErrorAdjustmentCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:57 2020 with 47.912 GB free disk space
+
+    cd unitigging/3-overlapErrorAdjustment
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/loadErates \
+      -S ../../Sars_cov_2_SRR11178051.seqStore \
+      -O ../Sars_cov_2_SRR11178051.ovlStore \
+      -L ./oea.files \
+    > ./oea.apply.err 2>&1
+
+-- Finished on Sun May 24 20:44:57 2020 (lickety-split) with 47.912 GB free disk space
+----------------------------------------
+-- No report available.
+-- Report changed.
+-- Finished stage 'updateOverlapStore', reset canuIteration.
+-- Finished stage 'unitig', reset canuIteration.
+-- No change in report.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'bat' concurrent execution on Sun May 24 20:44:57 2020 with 47.912 GB free disk space (1 processes; 1 concurrently)
+
+    cd unitigging/4-unitigger
+    ./unitigger.sh 1 > ./unitigger.000001.out 2>&1
+
+-- Finished on Sun May 24 20:44:58 2020 (one second) with 47.912 GB free disk space
+----------------------------------------
+-- Unitigger finished successfully.
+-- Found, in version 1, after unitig construction:
+--   contigs:      3 sequences, total length 32845 bp (including 0 repeats of total length 0 bp).
+--   bubbles:      0 sequences, total length 0 bp.
+--   unassembled:  24 sequences, total length 29932 bp.
+--
+-- Contig sizes based on genome size 30kbp:
+--
+--            NG (bp)  LG (contigs)    sum (bp)
+--         ----------  ------------  ----------
+--     10       30101             1       30101
+--     20       30101             1       30101
+--     30       30101             1       30101
+--     40       30101             1       30101
+--     50       30101             1       30101
+--     60       30101             1       30101
+--     70       30101             1       30101
+--     80       30101             1       30101
+--     90       30101             1       30101
+--    100       30101             1       30101
+--
+-- Report changed.
+-- Finished stage 'unitigCheck', reset canuIteration.
+----------------------------------------
+-- Starting command on Sun May 24 20:44:58 2020 with 47.912 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/utgcns \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -T  ./Sars_cov_2_SRR11178051.ctgStore 1 \
+      -partition 0.8 1 0.1 \
+    > ./Sars_cov_2_SRR11178051.ctgStore/partitioning.log 2>&1
+
+-- Finished on Sun May 24 20:44:58 2020 (furiously fast) with 47.911 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:44:58 2020 with 47.911 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/utgcns \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -T  ./Sars_cov_2_SRR11178051.utgStore 1 \
+      -partition 0.8 1 0.1 \
+    > ./Sars_cov_2_SRR11178051.utgStore/partitioning.log 2>&1
+
+-- Finished on Sun May 24 20:44:58 2020 (like a bat out of hell) with 47.91 GB free disk space
+----------------------------------------
+-- Using slow alignment for consensus (iteration '0').
+-- Configured 2 contig and 2 unitig consensus jobs.
+-- No change in report.
+-- Finished stage 'consensusConfigure', reset canuIteration.
+--
+--                                (tag)Concurrency
+--                         (tag)Threads          |
+--                (tag)Memory         |          |
+--        (tag)             |         |          |       total usage      algorithm
+--        -------  ----------  --------   --------  --------------------  -----------------------------
+-- Local: cns        0.500 GB    4 CPUs x   1 job      0.500 GB   4 CPUs  (consensus)
+--
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+----------------------------------------
+-- Starting 'cns' concurrent execution on Sun May 24 20:44:58 2020 with 47.91 GB free disk space (4 processes; 1 concurrently)
+
+    cd unitigging/5-consensus
+    ./consensus.sh 1 > ./consensus.000001.out 2>&1
+    ./consensus.sh 2 > ./consensus.000002.out 2>&1
+    ./consensus.sh 3 > ./consensus.000003.out 2>&1
+    ./consensus.sh 4 > ./consensus.000004.out 2>&1
+
+-- Finished on Sun May 24 20:45:01 2020 (3 seconds) with 47.91 GB free disk space
+----------------------------------------
+-- Using slow alignment for consensus (iteration '1').
+-- Configured 2 contig and 2 unitig consensus jobs.
+-- No change in report.
+-- All 4 consensus jobs finished successfully.
+-- No change in report.
+-- Finished stage 'consensusCheck', reset canuIteration.
+-- Using slow alignment for consensus (iteration '0').
+-- Configured 2 contig and 2 unitig consensus jobs.
+-- No change in report.
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreLoad \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -T  ./Sars_cov_2_SRR11178051.ctgStore 2 \
+      -L ./5-consensus/ctgcns.files \
+    > ./5-consensus/ctgcns.files.ctgStoreLoad.err 2>&1
+
+-- Finished on Sun May 24 20:45:02 2020 (lickety-split) with 47.91 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreLoad \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -T  ./Sars_cov_2_SRR11178051.utgStore 2 \
+      -L ./5-consensus/utgcns.files \
+    > ./5-consensus/utgcns.files.utgStoreLoad.err 2>&1
+
+-- Finished on Sun May 24 20:45:02 2020 (fast as lightning) with 47.91 GB free disk space
+----------------------------------------
+-- Purging consensus output after loading to ctgStore and/or utgStore.
+-- Purged 4 .cns outputs.
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd unitigging
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+      -S ../Sars_cov_2_SRR11178051.seqStore \
+      -T ./Sars_cov_2_SRR11178051.ctgStore 2 \
+      -sizes -s 30000 \
+    > ./Sars_cov_2_SRR11178051.ctgStore/seqDB.v002.sizes.txt
+sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
+
+-- Finished on Sun May 24 20:45:02 2020 (lickety-split) with 47.91 GB free disk space
+----------------------------------------
+-- Found, in version 2, after consensus generation:
+--   contigs:      3 sequences, total length 32510 bp (including 0 repeats of total length 0 bp).
+--   bubbles:      0 sequences, total length 0 bp.
+--   unassembled:  24 sequences, total length 29932 bp.
+--
+-- Contig sizes based on genome size 30kbp:
+--
+--            NG (bp)  LG (contigs)    sum (bp)
+--         ----------  ------------  ----------
+--     10       29790             1       29790
+--     20       29790             1       29790
+--     30       29790             1       29790
+--     40       29790             1       29790
+--     50       29790             1       29790
+--     60       29790             1       29790
+--     70       29790             1       29790
+--     80       29790             1       29790
+--     90       29790             1       29790
+--    100        1593             2       31383
+--
+-- Report changed.
+-- Finished stage 'consensusLoad', reset canuIteration.
+-- No change in report.
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd unitigging/4-unitigger
+    ./alignGFA.sh \
+    > alignGFA.err 2>&1
+
+-- Finished on Sun May 24 20:45:02 2020 (furiously fast) with 47.91 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -T ./unitigging/Sars_cov_2_SRR11178051.ctgStore 2 \
+      -o ./Sars_cov_2_SRR11178051.contigs \
+      -layout \
+    > ./Sars_cov_2_SRR11178051.contigs.layout.err 2>&1
+
+-- Finished on Sun May 24 20:45:02 2020 (fast as lightning) with 47.91 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -T ./unitigging/Sars_cov_2_SRR11178051.utgStore 2 \
+      -o ./Sars_cov_2_SRR11178051.unitigs \
+      -layout \
+    > ./Sars_cov_2_SRR11178051.unitigs.layout.err 2>&1
+
+-- Finished on Sun May 24 20:45:02 2020 (in the blink of an eye) with 47.91 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -T ./unitigging/Sars_cov_2_SRR11178051.ctgStore 2 \
+      -consensus -fasta \
+      -unassembled \
+    > ./Sars_cov_2_SRR11178051.unassembled.fasta
+    2> ./Sars_cov_2_SRR11178051.unassembled.err
+sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
+
+-- Finished on Sun May 24 20:45:02 2020 (in the blink of an eye) with 47.91 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -T ./unitigging/Sars_cov_2_SRR11178051.ctgStore 2 \
+      -consensus -fasta \
+      -contigs \
+    > ./Sars_cov_2_SRR11178051.contigs.fasta
+    2> ./Sars_cov_2_SRR11178051.contigs.err
+sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
+
+-- Finished on Sun May 24 20:45:02 2020 (fast as lightning) with 47.91 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Sun May 24 20:45:02 2020 with 47.91 GB free disk space
+
+    cd .
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+      -S ./Sars_cov_2_SRR11178051.seqStore \
+      -T ./unitigging/Sars_cov_2_SRR11178051.utgStore 2 \
+      -consensus -fasta \
+      -contigs \
+    > ./Sars_cov_2_SRR11178051.unitigs.fasta
+    2> ./Sars_cov_2_SRR11178051.unitigs.err
+sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
+
+-- Finished on Sun May 24 20:45:02 2020 (lickety-split) with 47.91 GB free disk space
+----------------------------------------
+-- No change in report.
+-- Finished stage 'generateOutputs', reset canuIteration.
+--
+-- Assembly 'Sars_cov_2_SRR11178051' finished in '/home/matheus/processamento_workflow/SRR11178051_05-24-2020-20-33-42/Sars_cov_2_SRR11178051'.
+--
+-- Summary saved in 'Sars_cov_2_SRR11178051.report'.
+--
+-- Sequences saved:
+--   Contigs       -> 'Sars_cov_2_SRR11178051.contigs.fasta'
+--   Unassembled   -> 'Sars_cov_2_SRR11178051.unassembled.fasta'
+--   Unitigs       -> 'Sars_cov_2_SRR11178051.unitigs.fasta'
+--
+-- Read layouts saved:
+--   Contigs       -> 'Sars_cov_2_SRR11178051.contigs.layout'.
+--   Unitigs       -> 'Sars_cov_2_SRR11178051.unitigs.layout'.
+--
+-- Graphs saved:
+--   Unitigs       -> 'Sars_cov_2_SRR11178051.unitigs.gfa'.
+--
+-- Bye.
+864.32user 27.51system 12:08.92elapsed 122%CPU (0avgtext+0avgdata 3714492maxresident)k
+45432inputs+5244824outputs (263major+4438888minor)pagefaults 0swaps

@@ -1,0 +1,91 @@
+   ### Execute -  SRR11178051
+    ###[$ fastq-dump  SRR11178051 ]
+Read 775912 spots for SRR11178051
+Written 775912 spots for SRR11178051
+
+
+
+    ###[$ fastqc  SRR11178051 .fastq]
+Analysis complete for SRR11178051.fastq
+
+
+
+    ###[$ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 SRR11178051.fastq > SRR11178051_high_quality.fastq]
+
+
+
+    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_SRR11178051 -d Sars_cov_2_SRR11178051 -nanopore SRR11178051_high_quality.fastq]
+
+
+
+    ###[$ cd $1/]
+    ###[$ ./vgas SRR11178051/Sars_cov_2_SRR11178051/Sars_cov_2_SRR11178051.contigs.fasta Sars_cov_2_SRR11178051.gene.prediction -n -p -b]
+
+
+         WELCOME TO VGAS! (LOCAL VERSION)
+   PREDICTION OF PROTEIN CODING GENES IN VIRAL AND PHAGE GENOMES
+
+!!! NOTE: non-standard 15 DNA base codes of IUPAC-IUB. 
+!!!      total number: 50
+!!!      29792 : i
+!!!      29794 : l
+!!!      29795 : e
+!!!      29798 : e
+!!!      29803 : l
+!!!      29808 : o
+!!!      29811 : i
+!!!      29814 : u
+!!!      29817 : e
+!!!      29821 : e
+!!!      29822 : p
+!!!      29823 : e
+!!!      29827 : o
+!!!      29829 : u
+!!!      29832 : e
+!!!      29836 : u
+!!!      29839 : l
+!!!      29840 : e
+!!!      29842 : o
+!!!      29844 : u
+!!!      29847 : e
+!!!      29851 : i
+!!!      29854 : u
+!!!      29855 : l
+!!!      29859 : o
+!!!      30988 : i
+!!!      30990 : l
+!!!      30991 : e
+!!!      30994 : e
+!!!      30999 : l
+!!!      31004 : o
+!!!      31007 : i
+!!!      31010 : u
+!!!      31013 : e
+!!!      31017 : e
+!!!      31018 : p
+!!!      31019 : e
+!!!      31023 : o
+!!!      31025 : u
+!!!      31028 : e
+!!!      31032 : u
+!!!      31035 : l
+!!!      31036 : e
+!!!      31038 : o
+!!!      31040 : u
+!!!      31043 : e
+!!!      31047 : i
+!!!      31050 : u
+!!!      31051 : l
+!!!      31055 : o
+!!!      We have replaced these nonstandard bases with 'n'.
+The number of base pairs in the analyzed genome:               32648
+The GC content of the genome:                                 38.75%
+The number of ORFs longer than    90 bp:                         157
+blasting...wait please
+The number of genes longer than    90 bp recognized by zcurve:    36
+Chromosome positions of predicted genes are saved in :
+          Sars_cov_2_SRR11178051_05-24-2020-20-33-42.gene.prediction
+Nuclotide acid sequences of predicted genes are saved in :
+     gene_Sars_cov_2_SRR11178051_05-24-2020-20-33-42.gene.prediction
+Traslated amino acid sequences of predicted genes are saved in :
+  protein_Sars_cov_2_SRR11178051_05-24-2020-20-33-42.gene.prediction

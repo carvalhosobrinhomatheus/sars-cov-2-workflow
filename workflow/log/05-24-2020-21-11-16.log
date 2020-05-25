@@ -1,0 +1,29 @@
+   ### Execute -  SRR11178053
+    ###[$ fastq-dump  SRR11178053 ]
+Read 860687 spots for SRR11178053
+Written 860687 spots for SRR11178053
+
+
+
+    ###[$ fastqc  SRR11178053 .fastq]
+Analysis complete for SRR11178053.fastq
+
+
+
+    ###[$ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 SRR11178053.fastq > SRR11178053_high_quality.fastq]
+
+
+
+    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_SRR11178053 -d Sars_cov_2_SRR11178053 -nanopore SRR11178053_high_quality.fastq]
+
+
+
+    ###[$ cd $1/]
+    ###[$ ./vgas SRR11178053/Sars_cov_2_SRR11178053/Sars_cov_2_SRR11178053.contigs.fasta Sars_cov_2_SRR11178053.gene.prediction -n -p -b]
+
+
+         WELCOME TO VGAS! (LOCAL VERSION)
+   PREDICTION OF PROTEIN CODING GENES IN VIRAL AND PHAGE GENOMES
+
+
+ERROR!!! Can't open the genome data file: 'SRR11178053_05-24-2020-21-11-16/Sars_cov_2_SRR11178053/Sars_cov_2_SRR11178053.contigs.fasta'.

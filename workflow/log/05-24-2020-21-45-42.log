@@ -1,0 +1,191 @@
+   ### Execute -  SRR11178056
+    ###[$ fastq-dump  SRR11178056 ]
+Read 808223 spots for SRR11178056
+Written 808223 spots for SRR11178056
+
+
+
+    ###[$ fastqc  SRR11178056 .fastq]
+Analysis complete for SRR11178056.fastq
+
+
+
+    ###[$ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 SRR11178056.fastq > SRR11178056_high_quality.fastq]
+
+
+
+    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_SRR11178056 -d Sars_cov_2_SRR11178056 -nanopore SRR11178056_high_quality.fastq]
+
+
+
+    ###[$ cd $1/]
+    ###[$ ./vgas SRR11178056/Sars_cov_2_SRR11178056/Sars_cov_2_SRR11178056.contigs.fasta Sars_cov_2_SRR11178056.gene.prediction -n -p -b]
+
+
+         WELCOME TO VGAS! (LOCAL VERSION)
+   PREDICTION OF PROTEIN CODING GENES IN VIRAL AND PHAGE GENOMES
+
+!!! NOTE: non-standard 15 DNA base codes of IUPAC-IUB. 
+!!!      total number: 150
+!!!      29560 : i
+!!!      29562 : l
+!!!      29563 : e
+!!!      29566 : e
+!!!      29571 : l
+!!!      29576 : o
+!!!      29579 : i
+!!!      29582 : u
+!!!      29585 : e
+!!!      29589 : e
+!!!      29590 : p
+!!!      29591 : e
+!!!      29595 : o
+!!!      29597 : u
+!!!      29600 : e
+!!!      29604 : u
+!!!      29607 : l
+!!!      29608 : e
+!!!      29610 : o
+!!!      29612 : u
+!!!      29615 : e
+!!!      29619 : i
+!!!      29622 : u
+!!!      29623 : l
+!!!      29627 : o
+!!!      32445 : i
+!!!      32447 : l
+!!!      32448 : e
+!!!      32451 : e
+!!!      32456 : l
+!!!      32461 : o
+!!!      32464 : i
+!!!      32467 : u
+!!!      32470 : e
+!!!      32474 : e
+!!!      32475 : p
+!!!      32476 : e
+!!!      32480 : o
+!!!      32482 : u
+!!!      32485 : e
+!!!      32489 : u
+!!!      32492 : l
+!!!      32493 : e
+!!!      32495 : o
+!!!      32497 : u
+!!!      32500 : e
+!!!      32504 : i
+!!!      32507 : u
+!!!      32508 : l
+!!!      32512 : o
+!!!      35185 : i
+!!!      35187 : l
+!!!      35188 : e
+!!!      35191 : e
+!!!      35196 : l
+!!!      35201 : o
+!!!      35204 : i
+!!!      35207 : u
+!!!      35210 : e
+!!!      35214 : e
+!!!      35215 : p
+!!!      35216 : e
+!!!      35220 : o
+!!!      35222 : u
+!!!      35225 : e
+!!!      35229 : u
+!!!      35232 : l
+!!!      35233 : e
+!!!      35235 : o
+!!!      35237 : u
+!!!      35240 : e
+!!!      35244 : i
+!!!      35247 : u
+!!!      35248 : l
+!!!      35252 : o
+!!!      36760 : i
+!!!      36762 : l
+!!!      36763 : e
+!!!      36766 : e
+!!!      36771 : l
+!!!      36776 : o
+!!!      36779 : i
+!!!      36782 : u
+!!!      36785 : e
+!!!      36789 : e
+!!!      36790 : p
+!!!      36791 : e
+!!!      36795 : o
+!!!      36797 : u
+!!!      36800 : e
+!!!      36804 : u
+!!!      36807 : l
+!!!      36808 : e
+!!!      36810 : o
+!!!      36812 : u
+!!!      36815 : e
+!!!      36819 : i
+!!!      36822 : u
+!!!      36823 : l
+!!!      36827 : o
+!!!      39484 : i
+!!!      39486 : l
+!!!      39487 : e
+!!!      39490 : e
+!!!      39495 : l
+!!!      39500 : o
+!!!      39503 : i
+!!!      39506 : u
+!!!      39509 : e
+!!!      39513 : e
+!!!      39514 : p
+!!!      39515 : e
+!!!      39519 : o
+!!!      39521 : u
+!!!      39524 : e
+!!!      39528 : u
+!!!      39531 : l
+!!!      39532 : e
+!!!      39534 : o
+!!!      39536 : u
+!!!      39539 : e
+!!!      39543 : i
+!!!      39546 : u
+!!!      39547 : l
+!!!      39551 : o
+!!!      40924 : i
+!!!      40926 : l
+!!!      40927 : e
+!!!      40930 : e
+!!!      40935 : l
+!!!      40940 : o
+!!!      40943 : i
+!!!      40946 : u
+!!!      40949 : e
+!!!      40953 : e
+!!!      40954 : p
+!!!      40955 : e
+!!!      40959 : o
+!!!      40961 : u
+!!!      40964 : e
+!!!      40968 : u
+!!!      40971 : l
+!!!      40972 : e
+!!!      40974 : o
+!!!      40976 : u
+!!!      40979 : e
+!!!      40983 : i
+!!!      40986 : u
+!!!      40987 : l
+!!!      40991 : o
+!!!      We have replaced these nonstandard bases with 'n'.
+The number of base pairs in the analyzed genome:               42393
+The GC content of the genome:                                 41.77%
+The number of ORFs longer than    90 bp:                         220
+blasting...wait please
+The number of genes longer than    90 bp recognized by zcurve:    50
+Chromosome positions of predicted genes are saved in :
+          Sars_cov_2_SRR11178056_05-24-2020-21-45-42.gene.prediction
+Nuclotide acid sequences of predicted genes are saved in :
+     gene_Sars_cov_2_SRR11178056_05-24-2020-21-45-42.gene.prediction
+Traslated amino acid sequences of predicted genes are saved in :
+  protein_Sars_cov_2_SRR11178056_05-24-2020-21-45-42.gene.prediction

@@ -1,0 +1,141 @@
+   ### Execute -  SRR11178054
+    ###[$ fastq-dump  SRR11178054 ]
+Read 586546 spots for SRR11178054
+Written 586546 spots for SRR11178054
+
+
+
+    ###[$ fastqc  SRR11178054 .fastq]
+Analysis complete for SRR11178054.fastq
+
+
+
+    ###[$ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 SRR11178054.fastq > SRR11178054_high_quality.fastq]
+
+
+
+    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_SRR11178054 -d Sars_cov_2_SRR11178054 -nanopore SRR11178054_high_quality.fastq]
+
+
+
+    ###[$ cd $1/]
+    ###[$ ./vgas SRR11178054/Sars_cov_2_SRR11178054/Sars_cov_2_SRR11178054.contigs.fasta Sars_cov_2_SRR11178054.gene.prediction -n -p -b]
+
+
+         WELCOME TO VGAS! (LOCAL VERSION)
+   PREDICTION OF PROTEIN CODING GENES IN VIRAL AND PHAGE GENOMES
+
+!!! NOTE: non-standard 15 DNA base codes of IUPAC-IUB. 
+!!!      total number: 100
+!!!      17514 : i
+!!!      17516 : l
+!!!      17517 : e
+!!!      17520 : e
+!!!      17525 : l
+!!!      17530 : o
+!!!      17533 : i
+!!!      17536 : u
+!!!      17539 : e
+!!!      17543 : e
+!!!      17544 : p
+!!!      17545 : e
+!!!      17549 : o
+!!!      17551 : u
+!!!      17554 : e
+!!!      17558 : u
+!!!      17561 : l
+!!!      17562 : e
+!!!      17564 : o
+!!!      17566 : u
+!!!      17569 : e
+!!!      17573 : i
+!!!      17576 : u
+!!!      17577 : l
+!!!      17581 : o
+!!!      30492 : i
+!!!      30494 : l
+!!!      30495 : e
+!!!      30498 : e
+!!!      30503 : l
+!!!      30508 : o
+!!!      30511 : i
+!!!      30514 : u
+!!!      30517 : e
+!!!      30521 : e
+!!!      30522 : p
+!!!      30523 : e
+!!!      30527 : o
+!!!      30529 : u
+!!!      30532 : e
+!!!      30536 : u
+!!!      30539 : l
+!!!      30540 : e
+!!!      30542 : o
+!!!      30544 : u
+!!!      30547 : e
+!!!      30551 : i
+!!!      30554 : u
+!!!      30555 : l
+!!!      30559 : o
+!!!      32264 : i
+!!!      32266 : l
+!!!      32267 : e
+!!!      32270 : e
+!!!      32275 : l
+!!!      32280 : o
+!!!      32283 : i
+!!!      32286 : u
+!!!      32289 : e
+!!!      32293 : e
+!!!      32294 : p
+!!!      32295 : e
+!!!      32299 : o
+!!!      32301 : u
+!!!      32304 : e
+!!!      32308 : u
+!!!      32311 : l
+!!!      32312 : e
+!!!      32314 : o
+!!!      32316 : u
+!!!      32319 : e
+!!!      32323 : i
+!!!      32326 : u
+!!!      32327 : l
+!!!      32331 : o
+!!!      33683 : i
+!!!      33685 : l
+!!!      33686 : e
+!!!      33689 : e
+!!!      33694 : l
+!!!      33699 : o
+!!!      33702 : i
+!!!      33705 : u
+!!!      33708 : e
+!!!      33712 : e
+!!!      33713 : p
+!!!      33714 : e
+!!!      33718 : o
+!!!      33720 : u
+!!!      33723 : e
+!!!      33727 : u
+!!!      33730 : l
+!!!      33731 : e
+!!!      33733 : e
+!!!      33736 : u
+!!!      33739 : e
+!!!      33743 : i
+!!!      33746 : u
+!!!      33747 : l
+!!!      33751 : o
+!!!      We have replaced these nonstandard bases with 'n'.
+The number of base pairs in the analyzed genome:               36537
+The GC content of the genome:                                 38.63%
+The number of ORFs longer than    90 bp:                         174
+blasting...wait please
+The number of genes longer than    90 bp recognized by zcurve:    47
+Chromosome positions of predicted genes are saved in :
+          Sars_cov_2_SRR11178054_05-24-2020-21-19-41.gene.prediction
+Nuclotide acid sequences of predicted genes are saved in :
+     gene_Sars_cov_2_SRR11178054_05-24-2020-21-19-41.gene.prediction
+Traslated amino acid sequences of predicted genes are saved in :
+  protein_Sars_cov_2_SRR11178054_05-24-2020-21-19-41.gene.prediction
