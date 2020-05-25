@@ -1,4 +1,13 @@
 echo '    ************************ Instalacoes Inicializadas *********************'
+
+echo '\n\n'
+echo '    ###[$ Intall linux tools]'
+apt-get install time net-tools -y
+
+echo '\n\n'
+echo '    ###[$ Execute command chmod +x]'
+chmod +x execution.sh execute.sh
+
 echo '\n\n'
 echo '    ###[$ mkdir ' $1 ']'
 mkdir $1
