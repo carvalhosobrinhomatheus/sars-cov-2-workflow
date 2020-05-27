@@ -2,7 +2,7 @@
 
 general_datetime=$(date +"%m-%d-%Y-%H-%M-%S")
 ip="$(hostname -I)"
-rounds=2
+rounds=1
 for counter in $(seq 1 $rounds); do
     echo "####### Round $counter/$rounds";
     execs='SRR11178050 SRR11178051 SRR11178052 SRR11178053 SRR11178054 SRR11178055 SRR11178056 SRR11178057'
