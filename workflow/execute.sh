@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#corMemory and/or corThreads
+#redMemory and/or redThreads
 echo '   ### Execute - ' $2
 datetime=$(date +"%m-%d-%Y-%H-%M-%S")
 
@@ -22,7 +24,7 @@ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 $2.fastq > $2_high_quality.fast
 echo '\n\n'
 echo '    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_'$2' -d Sars_cov_2_'$2' -nanopore '$2'_high_quality.fastq]'
 #$1/canu/Linux-amd64/bin/canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_$2 -d Sars_cov_2_$2 -nanopore $2_high_quality.fastq
-canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_$2 -d Sars_cov_2_$2 -nanopore $2_high_quality.fastq
+canu genomeSize=30k redMemory=4 redThreads=2 corMemory=4 corThreads=2 merylMemory=4 merylThreads=2 executiveThreads=2 oeaMemory=4 oeaThreads=2 -p Sars_cov_2_$2 -d Sars_cov_2_$2 -nanopore $2_high_quality.fastq
 
 echo '\n\n'
 echo '    ###[$ cd $1/]'

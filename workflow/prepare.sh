@@ -1,10 +1,6 @@
 echo '    ************************ Instalacoes Inicializadas *********************'
 
 echo '\n\n'
-echo '    ###[$ Intall linux tools]'
-apt-get install time net-tools dstat -y
-
-echo '\n\n'
 echo '    ###[$ Execute command chmod +x]'
 chmod +x execution.sh execute.sh
 
@@ -22,7 +18,7 @@ cd $1 && apt-get update -y
 
 echo '\n\n'
 echo '    ###[$ apt install -y wget python3-pip python3-dev python-dev python3-matplotlib python3-pip zip unzip default-jdk curl nano git gcc gcc zlib1g-dev zlib1g build-essential pkg-config libfreetype6-dev libpng-dev r-base gnuplot]'
-apt install -y wget python3-pip python3-dev python-dev python3-matplotlib python3-pip zip unzip default-jdk curl nano git gcc gcc zlib1g-dev zlib1g build-essential pkg-config libfreetype6-dev libpng-dev r-base gnuplot
+apt install -y wget time net-tools dstat python3-pip python3-dev python-dev python3-matplotlib python3-pip zip unzip default-jdk curl nano git gcc gcc zlib1g-dev zlib1g build-essential pkg-config libfreetype6-dev libpng-dev r-base gnuplot
 
 echo '\n\n'
 echo '    ###[$ wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py && pip install cgi-tools regex biopython]'
