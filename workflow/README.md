@@ -26,7 +26,8 @@ before:
         line = line + printcsv(val)
         if j + 1 != len(self.val[name]):
             line = line + char['sep']
-```elif isinstance(self.val[name], types.StringType):
+elif isinstance(self.val[name], types.StringType):
+```
 
 after:
 
@@ -35,4 +36,5 @@ after:
         line = line + printcsv(val)
         if j + 1 != len(self.val[name]):
             line = line + char['sep']
-```elif isinstance(self.val[name], str):
+elif isinstance(self.val[name], str):
+```
