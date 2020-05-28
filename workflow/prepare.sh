@@ -2,7 +2,7 @@ echo '    ************************ Instalacoes Inicializadas *******************
 
 echo '\n\n'
 echo '    ###[$ Intall linux tools]'
-apt-get install time net-tools -y
+apt-get install time net-tools dstat -y
 
 echo '\n\n'
 echo '    ###[$ Execute command chmod +x]'
@@ -26,7 +26,7 @@ apt install -y wget python3-pip python3-dev python-dev python3-matplotlib python
 
 echo '\n\n'
 echo '    ###[$ wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py && pip install cgi-tools regex biopython]'
-wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py && pip install cgi-tools regex biopython
+wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py && pip install cgi-tools regex & pip3 install biopython
 
 echo '\n\n'
 echo '    ###[$ Rscript ...]'
