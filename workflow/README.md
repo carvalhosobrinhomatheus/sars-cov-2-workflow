@@ -17,14 +17,22 @@
 
 `Contains a list with SRR parameters of sequences what defines execution repeat.`
 
+# FIX error dstat 
+Had to change the type-checking on lines 547 & 552:
 
-regex tratamento 
-remocao de espaco em branco em inicio de linha
-replace('^\ ', '')
+before:
+if isinstance(self.val[name], types.ListType) or isinstance(self.val[name], types.TupleType):
+    for j, val in enumerate(self.val[name]):
+        line = line + printcsv(val)
+        if j + 1 != len(self.val[name]):
+            line = line + char['sep']
+elif isinstance(self.val[name], types.StringType):
 
-Remocao de espaco em branco
-replace('\ ', '')
+after:
 
-replace('\|', '')
-
-replace('\,\,', ',')
+if isinstance(self.val[name], (tuple, list)):
+    for j, val in enumerate(self.val[name]):
+        line = line + printcsv(val)
+        if j + 1 != len(self.val[name]):
+            line = line + char['sep']
+elif isinstance(self.val[name], str):
