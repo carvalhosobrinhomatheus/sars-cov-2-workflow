@@ -21,20 +21,21 @@
 Had to change the type-checking on lines 547 & 552:
 
 before:
-```if isinstance(self.val[name], types.ListType) or isinstance(self.val[name], types.TupleType):
+```python
+if isinstance(self.val[name], types.ListType) or isinstance(self.val[name], types.TupleType):
     for j, val in enumerate(self.val[name]):
         line = line + printcsv(val)
         if j + 1 != len(self.val[name]):
             line = line + char['sep']
-    elif isinstance(self.val[name], types.StringType):
+elif isinstance(self.val[name], types.StringType):
 ```
-
 after:
-
-```if isinstance(self.val[name], (tuple, list)):
+```python
+if isinstance(self.val[name], (tuple, list)):
     for j, val in enumerate(self.val[name]):
         line = line + printcsv(val)
         if j + 1 != len(self.val[name]):
             line = line + char['sep']
-    elif isinstance(self.val[name], str):
+elif isinstance(self.val[name], str):
 ```
+
