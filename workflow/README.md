@@ -39,4 +39,4 @@ if isinstance(self.val[name], (tuple, list)):
 elif isinstance(self.val[name], str):
 ```
 Execute: 
-sudo mv dstat/dstat /usr/bin/dstat.override && sudo rm /usr/bin/dstat && sudo mv /usr/bin/dstat.override /usr/bin/dstat
+sudo cp dstat/dstat /usr/bin/dstat.override && sudo rm /usr/bin/dstat && sudo mv /usr/bin/dstat.override /usr/bin/dstat
