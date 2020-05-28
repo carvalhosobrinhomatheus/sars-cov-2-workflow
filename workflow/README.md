@@ -38,4 +38,5 @@ if isinstance(self.val[name], (tuple, list)):
             line = line + char['sep']
 elif isinstance(self.val[name], str):
 ```
-
+Execute: 
+sudo mv dstat/dstat /usr/bin/dstat.override && sudo rm /usr/bin/dstat && sudo mv /usr/bin/dstat.override /usr/bin/dstat
