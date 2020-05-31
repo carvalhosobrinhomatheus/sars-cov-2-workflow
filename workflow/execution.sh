@@ -11,11 +11,12 @@ for counter in $(seq 1 $rounds); do
         datetime=$(date +"%m-%d-%Y-%H-%M-%S")
         name="AWS_t2.medium_"$i"_"$datetime
         dstat -C -D -N -m -r -y -g -i -l -p -s -t -T --noheaders --output dstat/$name.csv >> dstat/dstat_out_$name.txt &
-	echo '\n### sh ./execute.sh' $1 $i;
-	#(time sh ./execute.sh $1 $i) >> log/$name.log
-	(time sh ./execute.sh $1 $i) > log/$name.log 2> log/time_$name.log
+	    echo '\n### sh ./execute.sh' $1 $i;
+	    #(time sh ./execute.sh $1 $i) >> log/$name.log
+	    (time sh ./execute.sh $1 $i) > log/$name.log 2> log/time_$name.log
         kill -15 `pgrep -f dstat`
     done
     (echo "["$ip"]-Excecution number["$counter"] - SRR - ["$execs"]") >> log/AWS_general_log__$general_datetime.log
 done
+
 

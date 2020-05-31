@@ -8,10 +8,6 @@ datetime=$(date +"%m-%d-%Y-%H-%M-%S")
 mkdir $1/$2_$datetime/
 cd $1/$2_$datetime
 
-echo '    ###[$ fastq-dump ' $2 ']'
-#$1/sratoolkit/bin/fastq-dump $2
-fastq-dump $2
-
 echo '\n\n'
 echo '    ###[$ fastqc ' $2 '.fastq]'
 #$1/FastQC/fastqc $2.fastq
