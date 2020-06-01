@@ -46,7 +46,7 @@ if isinstance(self.val[name], (tuple, list)):
             line = line + char['sep']
 elif isinstance(self.val[name], str):
 ```
-`Execute:`
+`To fix problem, execute this command:`
 
 ```console
     cp dstat/dstat /usr/bin/dstat.override && mv /usr/bin/dstat /usr/bin/dstat.old && mv /usr/bin/dstat.override /usr/bin/dstat
