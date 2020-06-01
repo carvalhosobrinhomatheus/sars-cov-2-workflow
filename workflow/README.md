@@ -49,7 +49,5 @@ elif isinstance(self.val[name], str):
 `Execute:`
 
 ```console
-    cp dstat/dstat /usr/bin/dstat.override && \
-    rm /usr/bin/dstat &&\
-    mv /usr/bin/dstat.override /usr/bin/dstat
+    cp dstat/dstat /usr/bin/dstat.override && mv /usr/bin/dstat /usr/bin/dstat.old && mv /usr/bin/dstat.override /usr/bin/dstat
 ```
