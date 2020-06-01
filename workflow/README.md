@@ -1,7 +1,7 @@
 # EXPORTED ENV VARS
 
-`Set vars to source system`
-* sudo . vars_export.sh
+`Import envs vars in execution files:`
+* config.conf
 
 # INSTALL PROGRAMS
 
