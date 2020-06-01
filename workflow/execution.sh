@@ -1,22 +1,23 @@
 #!/bin/bash
+# Import Configs
+. ./config.conf
 
-general_datetime=$(date +"%m-%d-%Y-%H-%M-%S")
-ip="$(hostname -I)"
-rounds=1
-for counter in $(seq 1 $rounds); do
-    echo "####### Round $counter/$rounds";
-    #execs='SRR11178050 SRR11178051 SRR11178052 SRR11178053 SRR11178054 SRR11178055 SRR11178056 SRR11178057'
-    execs='SRR11178050'
-    for i in $execs; do
-        datetime=$(date +"%m-%d-%Y-%H-%M-%S")
-        name="AWS_t2.medium_"$i"_"$datetime
-        dstat -C -D -N -m -r -y -g -i -l -p -s -t -T --noheaders --output dstat/$name.csv >> dstat/dstat_out_$name.txt &
-	    echo '\n### sh ./execute.sh' $1 $i;
-	    #(time sh ./execute.sh $1 $i) >> log/$name.log
-	    (time sh ./execute.sh $1 $i) > log/$name.log 2> log/time_$name.log
+GENERAL_DATETIME=$(date +"%m-%d-%Y-%H-%M-%S")
+
+sh download_srr.sh
+
+for COUNT in $(seq 1 ${ROUNDS}); do
+    echo "\n### Round ${COUNT}/${ROUNDS}";
+    CLOUD_MACHINE="${CLOUD}_${MACHINE}"
+    for i in ${EXECS_SRR}; do
+        echo "\n### sh ./execute.sh ${i}";
+        DATETIME=$(date +"%m-%d-%Y-%H-%M-%S")
+        NAME="${CLOUD_MACHINE}_${i}_${DATETIME}"
+        dstat -C -D -N -m -r -y -g -i -l -p -s -t -T --noheaders --output log/dstat/${NAME}.csv >> log/dstat/dstat_out_${NAME}.txt &
+	    (time sh ./execute.sh ${i}) > log/${NAME}.log 2> log/time_${NAME}.log
         kill -15 `pgrep -f dstat`
     done
-    (echo "["$ip"]-Excecution number["$counter"] - SRR - ["$execs"]") >> log/AWS_general_log__$general_datetime.log
+    (echo "[${IP_HOST}] - Excecution number [${COUNT}] - SRR - [${EXECS_SRR}]") >> log/"${CLOUD_MACHINE}_general_log__${GENERAL_DATETIME}.log"
 done
 
 
