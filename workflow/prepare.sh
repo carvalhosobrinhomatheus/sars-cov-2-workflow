@@ -18,7 +18,7 @@ echo '\n\n###[$ apt install -y wget python3-pip python3-dev python-dev python3-m
 apt install -y wget time net-tools dstat python3-pip python3-dev python-dev python3-matplotlib python3-pip zip unzip default-jdk curl nano git gcc gcc zlib1g-dev zlib1g build-essential pkg-config libfreetype6-dev libpng-dev r-base gnuplot
 
 echo '\n\n###[$ cp dstat/dstat /usr/bin/dstat.override && mv /usr/bin/dstat /usr/bin/dstat.old && mv /usr/bin/dstat.override /usr/bin/dstat]'
-cp dstat/dstat /usr/bin/dstat.override && mv /usr/bin/dstat /usr/bin/dstat.old && mv /usr/bin/dstat.override /usr/bin/dstat
+cp ${UTILS_DIR}/dstat /usr/bin/dstat.override && mv /usr/bin/dstat /usr/bin/dstat.old && mv /usr/bin/dstat.override /usr/bin/dstat
 
 echo '\n\n###[$ wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py && pip install cgi-tools regex biopython]'
 wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py && pip install cgi-tools regex & pip3 install biopython

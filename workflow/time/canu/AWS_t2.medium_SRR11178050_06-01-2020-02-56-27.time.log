@@ -1,24 +1,11 @@
-Started analysis of SRR11178050.fastq
-Approx 5% complete for SRR11178050.fastq
-Approx 10% complete for SRR11178050.fastq
-Approx 15% complete for SRR11178050.fastq
-Approx 20% complete for SRR11178050.fastq
-Approx 25% complete for SRR11178050.fastq
-Approx 30% complete for SRR11178050.fastq
-Approx 35% complete for SRR11178050.fastq
-Approx 40% complete for SRR11178050.fastq
-Approx 45% complete for SRR11178050.fastq
-Approx 50% complete for SRR11178050.fastq
-Approx 55% complete for SRR11178050.fastq
-Approx 60% complete for SRR11178050.fastq
-Approx 65% complete for SRR11178050.fastq
-Approx 70% complete for SRR11178050.fastq
-Approx 75% complete for SRR11178050.fastq
-Approx 80% complete for SRR11178050.fastq
-Approx 85% complete for SRR11178050.fastq
-Approx 90% complete for SRR11178050.fastq
-Approx 95% complete for SRR11178050.fastq
--- canu snapshot v2.0-development +531 changes (r10024 1400b390d98a749417b2fb6a8e238a8cfe2e737f)
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "pt_BR:pt:en",
+	LC_ALL = "en_US.UTF-8",
+	LANG = "pt_BR.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("pt_BR.UTF-8").
+-- canu snapshot v2.0-development +523 changes (r10016 cafc287f0c6a33d7540deb21a0311fb985d3bdb8)
 --
 -- CITATIONS
 --
@@ -60,8 +47,8 @@ Approx 95% complete for SRR11178050.fastq
 -- CONFIGURE CANU
 --
 -- Detected Java(TM) Runtime Environment '11.0.7' (from 'java') without -d64 support.
--- Detected gnuplot version '5.2 patchlevel 8   ' (from 'gnuplot') and image format 'png'.
--- Detected 2 CPUs and 4 gigabytes of memory.
+-- Detected gnuplot version '5.2 patchlevel 6   ' (from 'gnuplot') and image format 'png'.
+-- Detected 4 CPUs and 8 gigabytes of memory.
 -- No grid engine detected, grid and staging disabled.
 --
 --                                (tag)Concurrency
@@ -69,23 +56,23 @@ Approx 95% complete for SRR11178050.fastq
 --                (tag)Memory         |          |
 --        (tag)             |         |          |       total usage      algorithm
 --        -------  ----------  --------   --------  --------------------  -----------------------------
--- Local: meryl      4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (k-mer counting)
--- Local: hap        4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (read-to-haplotype assignment)
--- Local: cormhap    4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (overlap detection with mhap)
--- Local: obtovl     4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (overlap detection)
--- Local: utgovl     4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (overlap detection)
--- Local: cor        4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (read correction)
--- Local: ovb        4.000 GB    1 CPU  x   1 job      4.000 GB   1 CPU   (overlap store bucketizer)
--- Local: ovs        4.000 GB    1 CPU  x   1 job      4.000 GB   1 CPU   (overlap store sorting)
--- Local: red        4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (read error detection)
--- Local: oea        4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (overlap error adjustment)
--- Local: bat        4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (contig construction with bogart)
--- Local: cns        -.--- GB    2 CPUs x   - jobs     -.--- GB   - CPUs  (consensus)
--- Local: gfa        4.000 GB    2 CPUs x   1 job      4.000 GB   2 CPUs  (GFA alignment and processing)
+-- Local: meryl      4.000 GB    2 CPUs x   2 jobs     8.000 GB   4 CPUs  (k-mer counting)
+-- Local: hap        8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (read-to-haplotype assignment)
+-- Local: cormhap    6.000 GB    4 CPUs x   1 job      6.000 GB   4 CPUs  (overlap detection with mhap)
+-- Local: obtovl     4.000 GB    4 CPUs x   1 job      4.000 GB   4 CPUs  (overlap detection)
+-- Local: utgovl     4.000 GB    4 CPUs x   1 job      4.000 GB   4 CPUs  (overlap detection)
+-- Local: cor        4.000 GB    2 CPUs x   2 jobs     8.000 GB   4 CPUs  (read correction)
+-- Local: ovb        4.000 GB    1 CPU  x   2 jobs     8.000 GB   2 CPUs  (overlap store bucketizer)
+-- Local: ovs        8.000 GB    1 CPU  x   1 job      8.000 GB   1 CPU   (overlap store sorting)
+-- Local: red        4.000 GB    2 CPUs x   2 jobs     8.000 GB   4 CPUs  (read error detection)
+-- Local: oea        4.000 GB    2 CPUs x   2 jobs     8.000 GB   4 CPUs  (overlap error adjustment)
+-- Local: bat        8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (contig construction with bogart)
+-- Local: cns        -.--- GB    4 CPUs x   - jobs     -.--- GB   - CPUs  (consensus)
+-- Local: gfa        8.000 GB    4 CPUs x   1 job      8.000 GB   4 CPUs  (GFA alignment and processing)
 --
 -- Found untrimmed raw Nanopore reads in the input files.
 --
--- Generating assembly 'Sars_cov_2_SRR11178050' in '/home/ubuntu/processamento_workflow/SRR11178050_05-28-2020-18-47-05/Sars_cov_2_SRR11178050':
+-- Generating assembly 'Sars_cov_2_SRR11178050' in '/home/matheus/processamento_workflow/SRR11178050_06-01-2020-02-56-27/Sars_cov_2_SRR11178050':
 --    - correct raw reads.
 --    - trim corrected reads.
 --    - assemble corrected and trimmed reads.
@@ -109,19 +96,19 @@ Approx 95% complete for SRR11178050.fastq
 -- BEGIN CORRECTION
 --
 ----------------------------------------
--- Starting command on Thu May 28 18:49:29 2020 with 23.94 GB free disk space
+-- Starting command on Mon Jun  1 02:58:05 2020 with 57.094 GB free disk space
 
     cd .
     ./Sars_cov_2_SRR11178050.seqStore.sh \
     > ./Sars_cov_2_SRR11178050.seqStore.err 2>&1
 
--- Finished on Thu May 28 18:49:31 2020 (2 seconds) with 23.884 GB free disk space
+-- Finished on Mon Jun  1 02:58:08 2020 (3 seconds) with 57.039 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:49:31 2020 with 23.884 GB free disk space
+-- Starting command on Mon Jun  1 02:58:08 2020 with 57.039 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -raw \
       -histogram \
@@ -130,13 +117,13 @@ Approx 95% complete for SRR11178050.fastq
     2> ./Sars_cov_2_SRR11178050.seqStore/readlengths-cor.err 
     
 
--- Finished on Thu May 28 18:49:31 2020 (like a bat out of hell) with 23.884 GB free disk space
+-- Finished on Mon Jun  1 02:58:08 2020 (furiously fast) with 57.039 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:49:31 2020 with 23.884 GB free disk space
+-- Starting command on Mon Jun  1 02:58:08 2020 with 57.038 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -raw \
       -histogram \
@@ -144,7 +131,7 @@ Approx 95% complete for SRR11178050.fastq
     2> ./Sars_cov_2_SRR11178050.seqStore/readlengths-cor.err 
     
 
--- Finished on Thu May 28 18:49:31 2020 (like a bat out of hell) with 23.884 GB free disk space
+-- Finished on Mon Jun  1 02:58:08 2020 (like a bat out of hell) with 57.038 GB free disk space
 ----------------------------------------
 --
 -- In sequence store './Sars_cov_2_SRR11178050.seqStore':
@@ -206,13 +193,13 @@ Approx 95% complete for SRR11178050.fastq
 --    
 -- New report created.
 ----------------------------------------
--- Starting command on Thu May 28 18:49:31 2020 with 23.884 GB free disk space
+-- Starting command on Mon Jun  1 02:58:08 2020 with 57.038 GB free disk space
 
     cd correction/0-mercounts
     ./meryl-configure.sh \
     > ./meryl-configure.err 2>&1
 
--- Finished on Thu May 28 18:49:31 2020 (like a bat out of hell) with 23.884 GB free disk space
+-- Finished on Mon Jun  1 02:58:08 2020 (lickety-split) with 57.038 GB free disk space
 ----------------------------------------
 --  segments   memory batches
 --  -------- -------- -------
@@ -227,12 +214,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'meryl' concurrent execution on Thu May 28 18:49:31 2020 with 23.884 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'meryl' concurrent execution on Mon Jun  1 02:58:08 2020 with 57.038 GB free disk space (1 processes; 2 concurrently)
 
     cd correction/0-mercounts
     ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
 
--- Finished on Thu May 28 18:49:32 2020 (one second) with 23.877 GB free disk space
+-- Finished on Mon Jun  1 02:58:10 2020 (2 seconds) with 57.031 GB free disk space
 ----------------------------------------
 -- Found 1 Kmer counting (meryl) outputs.
 -- No change in report.
@@ -241,12 +228,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'meryl' concurrent execution on Thu May 28 18:49:32 2020 with 23.877 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'meryl' concurrent execution on Mon Jun  1 02:58:10 2020 with 57.031 GB free disk space (1 processes; 2 concurrently)
 
     cd correction/0-mercounts
     ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
 
--- Finished on Thu May 28 18:49:33 2020 (one second) with 23.883 GB free disk space
+-- Finished on Mon Jun  1 02:58:10 2020 (lickety-split) with 57.037 GB free disk space
 ----------------------------------------
 -- Meryl finished successfully.  Kmer frequency histogram:
 --
@@ -309,7 +296,7 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- PARAMETERS: hashes=256, minMatches=3, threshold=0.8
 --
--- Given 3.6 GB, can fit 10800 reads per block.
+-- Given 5.4 GB, can fit 16200 reads per block.
 -- For 2 blocks, set stride to 2 blocks.
 -- Logging partitioning to 'correction/1-overlapper/partitioning.log'.
 -- Configured 1 mhap precompute jobs.
@@ -320,12 +307,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'cormhap' concurrent execution on Thu May 28 18:49:33 2020 with 23.884 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'cormhap' concurrent execution on Mon Jun  1 02:58:11 2020 with 57.038 GB free disk space (1 processes; 1 concurrently)
 
     cd correction/1-overlapper
     ./precompute.sh 1 > ./precompute.000001.out 2>&1
 
--- Finished on Thu May 28 18:49:49 2020 (16 seconds) with 23.856 GB free disk space
+-- Finished on Mon Jun  1 02:58:23 2020 (12 seconds) with 57.01 GB free disk space
 ----------------------------------------
 -- All 1 mhap precompute jobs finished successfully.
 -- No change in report.
@@ -334,29 +321,29 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'cormhap' concurrent execution on Thu May 28 18:49:49 2020 with 23.856 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'cormhap' concurrent execution on Mon Jun  1 02:58:23 2020 with 57.01 GB free disk space (1 processes; 1 concurrently)
 
     cd correction/1-overlapper
     ./mhap.sh 1 > ./mhap.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:05 2020 (16 seconds) with 23.852 GB free disk space
+-- Finished on Mon Jun  1 02:58:34 2020 (11 seconds) with 57.006 GB free disk space
 ----------------------------------------
 -- Found 1 mhap overlap output files.
 -- No change in report.
 -- Finished stage 'cor-mhapCheck', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:05 2020 with 23.852 GB free disk space
+-- Starting command on Mon Jun  1 02:58:34 2020 with 57.006 GB free disk space
 
     cd correction
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
      -S ../Sars_cov_2_SRR11178050.seqStore \
-     -M 4-4 \
+     -M 4-8 \
      -L ./1-overlapper/ovljob.files \
      -create ./Sars_cov_2_SRR11178050.ovlStore.config \
      > ./Sars_cov_2_SRR11178050.ovlStore.config.txt \
     2> ./Sars_cov_2_SRR11178050.ovlStore.config.err
 
--- Finished on Thu May 28 18:50:05 2020 (in the blink of an eye) with 23.852 GB free disk space
+-- Finished on Mon Jun  1 02:58:34 2020 (like a bat out of hell) with 57.006 GB free disk space
 ----------------------------------------
 --
 -- Creating overlap store correction/Sars_cov_2_SRR11178050.ovlStore using:
@@ -369,12 +356,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'ovB' concurrent execution on Thu May 28 18:50:05 2020 with 23.852 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'ovB' concurrent execution on Mon Jun  1 02:58:34 2020 with 57.006 GB free disk space (1 processes; 2 concurrently)
 
     cd correction/Sars_cov_2_SRR11178050.ovlStore.BUILDING
     ./scripts/1-bucketize.sh 1 > ./logs/1-bucketize.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:06 2020 (one second) with 23.845 GB free disk space
+-- Finished on Mon Jun  1 02:58:35 2020 (one second) with 56.999 GB free disk space
 ----------------------------------------
 -- Overlap store bucketizer finished.
 -- No change in report.
@@ -383,42 +370,42 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'ovS' concurrent execution on Thu May 28 18:50:06 2020 with 23.845 GB free disk space (2 processes; 1 concurrently)
+-- Starting 'ovS' concurrent execution on Mon Jun  1 02:58:35 2020 with 56.999 GB free disk space (2 processes; 1 concurrently)
 
     cd correction/Sars_cov_2_SRR11178050.ovlStore.BUILDING
     ./scripts/2-sort.sh 1 > ./logs/2-sort.000001.out 2>&1
     ./scripts/2-sort.sh 2 > ./logs/2-sort.000002.out 2>&1
 
--- Finished on Thu May 28 18:50:06 2020 (in the blink of an eye) with 23.842 GB free disk space
+-- Finished on Mon Jun  1 02:58:36 2020 (one second) with 56.996 GB free disk space
 ----------------------------------------
 -- Overlap store sorter finished.
 -- No change in report.
 -- Finished stage 'cor-overlapStoreSorterCheck', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:06 2020 with 23.842 GB free disk space
+-- Starting command on Mon Jun  1 02:58:36 2020 with 56.996 GB free disk space
 
     cd correction
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
       -O  ./Sars_cov_2_SRR11178050.ovlStore.BUILDING \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -C  ./Sars_cov_2_SRR11178050.ovlStore.config \
       -delete \
     > ./Sars_cov_2_SRR11178050.ovlStore.BUILDING.index.err 2>&1
 
--- Finished on Thu May 28 18:50:06 2020 (like a bat out of hell) with 23.842 GB free disk space
+-- Finished on Mon Jun  1 02:58:36 2020 (fast as lightning) with 56.996 GB free disk space
 ----------------------------------------
 -- Checking store.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:06 2020 with 23.842 GB free disk space
+-- Starting command on Mon Jun  1 02:58:36 2020 with 56.997 GB free disk space
 
     cd correction
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
      -S ../Sars_cov_2_SRR11178050.seqStore \
      -O  ./Sars_cov_2_SRR11178050.ovlStore \
      -counts \
      > ./Sars_cov_2_SRR11178050.ovlStore/counts.dat 2> ./Sars_cov_2_SRR11178050.ovlStore/counts.err
 
--- Finished on Thu May 28 18:50:06 2020 (in the blink of an eye) with 23.842 GB free disk space
+-- Finished on Mon Jun  1 02:58:36 2020 (in the blink of an eye) with 56.996 GB free disk space
 ----------------------------------------
 --
 -- Overlap store 'correction/Sars_cov_2_SRR11178050.ovlStore' successfully constructed.
@@ -432,26 +419,26 @@ Approx 95% complete for SRR11178050.fastq
 -- Global filter scores will be estimated.
 -- Computing correction layouts.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:06 2020 with 23.874 GB free disk space
+-- Starting command on Mon Jun  1 02:58:36 2020 with 57.028 GB free disk space
 
     cd correction
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/generateCorrectionLayouts \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/generateCorrectionLayouts \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -O  ./Sars_cov_2_SRR11178050.ovlStore \
       -C  ./Sars_cov_2_SRR11178050.corStore.WORKING \
       -eC 80 \
     > ./Sars_cov_2_SRR11178050.corStore.err 2>&1
 
--- Finished on Thu May 28 18:50:06 2020 (in the blink of an eye) with 23.872 GB free disk space
+-- Finished on Mon Jun  1 02:58:36 2020 (lickety-split) with 57.026 GB free disk space
 ----------------------------------------
 -- No change in report.
 -- Finished stage 'cor-buildCorrectionLayoutsConfigure', reset canuIteration.
 -- Computing correction layouts.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:06 2020 with 23.872 GB free disk space
+-- Starting command on Mon Jun  1 02:58:36 2020 with 57.026 GB free disk space
 
     cd correction/2-correction
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/filterCorrectionLayouts \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/filterCorrectionLayouts \
       -S  ../../Sars_cov_2_SRR11178050.seqStore \
       -C     ../Sars_cov_2_SRR11178050.corStore \
       -R      ./Sars_cov_2_SRR11178050.readsToCorrect.WORKING \
@@ -461,7 +448,7 @@ Approx 95% complete for SRR11178050.fastq
       -c  40 \
     > ./Sars_cov_2_SRR11178050.readsToCorrect.err 2>&1
 
--- Finished on Thu May 28 18:50:06 2020 (lickety-split) with 23.872 GB free disk space
+-- Finished on Mon Jun  1 02:58:36 2020 (like a bat out of hell) with 57.026 GB free disk space
 ----------------------------------------
 --                             original      original
 --                            raw reads     raw reads
@@ -512,13 +499,13 @@ Approx 95% complete for SRR11178050.fastq
 --   Reads estimated to need at most 1 GB for computation.
 --   Leaving 3 GB memory for read data.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:06 2020 with 23.872 GB free disk space
+-- Starting command on Mon Jun  1 02:58:36 2020 with 57.026 GB free disk space
 
     cd correction/2-correction
     ./correctReadsPartition.sh \
     > ./correctReadsPartition.err 2>&1
 
--- Finished on Thu May 28 18:50:07 2020 (one second) with 23.872 GB free disk space
+-- Finished on Mon Jun  1 02:58:36 2020 (furiously fast) with 57.026 GB free disk space
 ----------------------------------------
 -- Using overlaps no worse than 0.5 fraction error for correcting reads (from corErrorRate parameter).
 -- No change in report.
@@ -527,12 +514,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'cor' concurrent execution on Thu May 28 18:50:07 2020 with 23.872 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'cor' concurrent execution on Mon Jun  1 02:58:36 2020 with 57.026 GB free disk space (1 processes; 2 concurrently)
 
     cd correction/2-correction
     ./correctReads.sh 1 > ./correctReads.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:17 2020 (10 seconds) with 23.868 GB free disk space
+-- Finished on Mon Jun  1 02:58:50 2020 (14 seconds) with 57.022 GB free disk space
 ----------------------------------------
 -- Found 1 read correction output files.
 -- No change in report.
@@ -543,23 +530,23 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Loading corrected reads into corStore and seqStore.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:17 2020 with 23.868 GB free disk space
+-- Starting command on Mon Jun  1 02:58:50 2020 with 57.022 GB free disk space
 
     cd correction
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/loadCorrectedReads \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/loadCorrectedReads \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -C ./Sars_cov_2_SRR11178050.corStore \
       -L ./2-correction/corjob.files \
     >  ./Sars_cov_2_SRR11178050.loadCorrectedReads.log \
     2> ./Sars_cov_2_SRR11178050.loadCorrectedReads.err
 
--- Finished on Thu May 28 18:50:17 2020 (lickety-split) with 23.867 GB free disk space
+-- Finished on Mon Jun  1 02:58:50 2020 (like a bat out of hell) with 57.021 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:17 2020 with 23.867 GB free disk space
+-- Starting command on Mon Jun  1 02:58:50 2020 with 57.021 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -corrected \
       -histogram \
@@ -568,13 +555,13 @@ Approx 95% complete for SRR11178050.fastq
     2> ./Sars_cov_2_SRR11178050.seqStore/readlengths-obt.err 
     
 
--- Finished on Thu May 28 18:50:17 2020 (lickety-split) with 23.867 GB free disk space
+-- Finished on Mon Jun  1 02:58:50 2020 (in the blink of an eye) with 57.021 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:17 2020 with 23.867 GB free disk space
+-- Starting command on Mon Jun  1 02:58:50 2020 with 57.021 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -corrected \
       -histogram \
@@ -582,7 +569,7 @@ Approx 95% complete for SRR11178050.fastq
     2> ./Sars_cov_2_SRR11178050.seqStore/readlengths-obt.err 
     
 
--- Finished on Thu May 28 18:50:17 2020 (in the blink of an eye) with 23.867 GB free disk space
+-- Finished on Mon Jun  1 02:58:50 2020 (like a bat out of hell) with 57.021 GB free disk space
 ----------------------------------------
 --
 -- In sequence store './Sars_cov_2_SRR11178050.seqStore':
@@ -651,10 +638,10 @@ Approx 95% complete for SRR11178050.fastq
 -- Report changed.
 -- Finished stage 'cor-loadCorrectedReads', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:17 2020 with 23.881 GB free disk space
+-- Starting command on Mon Jun  1 02:58:50 2020 with 57.035 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpFASTQ \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpFASTQ \
       -corrected \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -o ./Sars_cov_2_SRR11178050.correctedReads.gz \
@@ -662,7 +649,7 @@ Approx 95% complete for SRR11178050.fastq
       -nolibname \
     > Sars_cov_2_SRR11178050.correctedReads.fasta.err 2>&1
 
--- Finished on Thu May 28 18:50:17 2020 (furiously fast) with 23.88 GB free disk space
+-- Finished on Mon Jun  1 02:58:50 2020 (like a bat out of hell) with 57.034 GB free disk space
 ----------------------------------------
 --
 -- Corrected reads saved in 'Sars_cov_2_SRR11178050.correctedReads.fasta.gz'.
@@ -674,13 +661,13 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- No change in report.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:17 2020 with 23.88 GB free disk space
+-- Starting command on Mon Jun  1 02:58:50 2020 with 57.034 GB free disk space
 
     cd trimming/0-mercounts
     ./meryl-configure.sh \
     > ./meryl-configure.err 2>&1
 
--- Finished on Thu May 28 18:50:18 2020 (one second) with 23.88 GB free disk space
+-- Finished on Mon Jun  1 02:58:50 2020 (like a bat out of hell) with 57.034 GB free disk space
 ----------------------------------------
 --  segments   memory batches
 --  -------- -------- -------
@@ -695,12 +682,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'meryl' concurrent execution on Thu May 28 18:50:18 2020 with 23.88 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'meryl' concurrent execution on Mon Jun  1 02:58:50 2020 with 57.034 GB free disk space (1 processes; 2 concurrently)
 
     cd trimming/0-mercounts
     ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:18 2020 (like a bat out of hell) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:58:51 2020 (one second) with 57.032 GB free disk space
 ----------------------------------------
 -- Found 1 Kmer counting (meryl) outputs.
 -- No change in report.
@@ -709,12 +696,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'meryl' concurrent execution on Thu May 28 18:50:18 2020 with 23.878 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'meryl' concurrent execution on Mon Jun  1 02:58:51 2020 with 57.032 GB free disk space (1 processes; 2 concurrently)
 
     cd trimming/0-mercounts
     ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:19 2020 (one second) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:58:52 2020 (one second) with 57.033 GB free disk space
 ----------------------------------------
 -- Meryl finished successfully.  Kmer frequency histogram:
 --
@@ -774,10 +761,10 @@ Approx 95% complete for SRR11178050.fastq
 -- OVERLAPPER (normal) (trimming) erate=0.12
 --
 ----------------------------------------
--- Starting command on Thu May 28 18:50:20 2020 with 23.88 GB free disk space
+-- Starting command on Mon Jun  1 02:58:52 2020 with 57.034 GB free disk space
 
     cd trimming/1-overlapper
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/overlapInCorePartition \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/overlapInCorePartition \
      -S  ../../Sars_cov_2_SRR11178050.seqStore \
      -hl 80000000 \
      -rl 1000000000 \
@@ -785,7 +772,7 @@ Approx 95% complete for SRR11178050.fastq
      -o  ./Sars_cov_2_SRR11178050.partition \
     > ./Sars_cov_2_SRR11178050.partition.err 2>&1
 
--- Finished on Thu May 28 18:50:20 2020 (lickety-split) with 23.88 GB free disk space
+-- Finished on Mon Jun  1 02:58:52 2020 (lickety-split) with 57.034 GB free disk space
 ----------------------------------------
 --
 -- Configured 1 overlapInCore jobs.
@@ -795,12 +782,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'obtovl' concurrent execution on Thu May 28 18:50:20 2020 with 23.88 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'obtovl' concurrent execution on Mon Jun  1 02:58:52 2020 with 57.034 GB free disk space (1 processes; 1 concurrently)
 
     cd trimming/1-overlapper
     ./overlap.sh 1 > ./overlap.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:32 2020 (12 seconds) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:00 2020 (8 seconds) with 57.033 GB free disk space
 ----------------------------------------
 -- Found 1 overlapInCore output files.
 --
@@ -809,7 +796,7 @@ Approx 95% complete for SRR11178050.fastq
 --     with no overlap           453261      453261 +- 0
 --     with an overlap            59295       59295 +- 0
 --
---   overlaps                     59292       59292 +- 0
+--   overlaps                     59293       59293 +- 0
 --     contained                      0           0 +- 0
 --     dovetail                       0           0 +- 0
 --
@@ -820,10 +807,10 @@ Approx 95% complete for SRR11178050.fastq
 -- No change in report.
 -- Finished stage 'obt-overlapCheck', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:32 2020 with 23.879 GB free disk space
+-- Starting command on Mon Jun  1 02:59:00 2020 with 57.033 GB free disk space
 
     cd trimming
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
      -S ../Sars_cov_2_SRR11178050.seqStore \
      -M 3 \
      -L ./1-overlapper/ovljob.files \
@@ -831,7 +818,7 @@ Approx 95% complete for SRR11178050.fastq
      > ./Sars_cov_2_SRR11178050.ovlStore.config.txt \
     2> ./Sars_cov_2_SRR11178050.ovlStore.config.err
 
--- Finished on Thu May 28 18:50:32 2020 (fast as lightning) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:00 2020 (fast as lightning) with 57.033 GB free disk space
 ----------------------------------------
 --
 -- Creating overlap store trimming/Sars_cov_2_SRR11178050.ovlStore using:
@@ -844,12 +831,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'ovB' concurrent execution on Thu May 28 18:50:32 2020 with 23.879 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'ovB' concurrent execution on Mon Jun  1 02:59:00 2020 with 57.033 GB free disk space (1 processes; 2 concurrently)
 
     cd trimming/Sars_cov_2_SRR11178050.ovlStore.BUILDING
     ./scripts/1-bucketize.sh 1 > ./logs/1-bucketize.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:32 2020 (fast as lightning) with 23.877 GB free disk space
+-- Finished on Mon Jun  1 02:59:00 2020 (lickety-split) with 57.031 GB free disk space
 ----------------------------------------
 -- Overlap store bucketizer finished.
 -- No change in report.
@@ -858,42 +845,42 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'ovS' concurrent execution on Thu May 28 18:50:32 2020 with 23.877 GB free disk space (2 processes; 1 concurrently)
+-- Starting 'ovS' concurrent execution on Mon Jun  1 02:59:00 2020 with 57.031 GB free disk space (2 processes; 1 concurrently)
 
     cd trimming/Sars_cov_2_SRR11178050.ovlStore.BUILDING
     ./scripts/2-sort.sh 1 > ./logs/2-sort.000001.out 2>&1
     ./scripts/2-sort.sh 2 > ./logs/2-sort.000002.out 2>&1
 
--- Finished on Thu May 28 18:50:32 2020 (furiously fast) with 23.877 GB free disk space
+-- Finished on Mon Jun  1 02:59:01 2020 (one second) with 57.031 GB free disk space
 ----------------------------------------
 -- Overlap store sorter finished.
 -- No change in report.
 -- Finished stage 'obt-overlapStoreSorterCheck', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:32 2020 with 23.877 GB free disk space
+-- Starting command on Mon Jun  1 02:59:01 2020 with 57.031 GB free disk space
 
     cd trimming
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
       -O  ./Sars_cov_2_SRR11178050.ovlStore.BUILDING \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -C  ./Sars_cov_2_SRR11178050.ovlStore.config \
       -delete \
     > ./Sars_cov_2_SRR11178050.ovlStore.BUILDING.index.err 2>&1
 
--- Finished on Thu May 28 18:50:32 2020 (lickety-split) with 23.877 GB free disk space
+-- Finished on Mon Jun  1 02:59:01 2020 (fast as lightning) with 57.031 GB free disk space
 ----------------------------------------
 -- Checking store.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:32 2020 with 23.877 GB free disk space
+-- Starting command on Mon Jun  1 02:59:01 2020 with 57.031 GB free disk space
 
     cd trimming
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
      -S ../Sars_cov_2_SRR11178050.seqStore \
      -O  ./Sars_cov_2_SRR11178050.ovlStore \
      -counts \
      > ./Sars_cov_2_SRR11178050.ovlStore/counts.dat 2> ./Sars_cov_2_SRR11178050.ovlStore/counts.err
 
--- Finished on Thu May 28 18:50:32 2020 (furiously fast) with 23.877 GB free disk space
+-- Finished on Mon Jun  1 02:59:01 2020 (furiously fast) with 57.031 GB free disk space
 ----------------------------------------
 --
 -- Overlap store 'trimming/Sars_cov_2_SRR11178050.ovlStore' successfully constructed.
@@ -904,10 +891,10 @@ Approx 95% complete for SRR11178050.fastq
 -- No change in report.
 -- Finished stage 'obt-createOverlapStore', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:32 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:01 2020 with 57.032 GB free disk space
 
     cd trimming/3-overlapbasedtrimming
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/trimReads \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/trimReads \
       -S  ../../Sars_cov_2_SRR11178050.seqStore \
       -O  ../Sars_cov_2_SRR11178050.ovlStore \
       -Co ./Sars_cov_2_SRR11178050.1.trimReads.clear \
@@ -918,7 +905,7 @@ Approx 95% complete for SRR11178050.fastq
       -o  ./Sars_cov_2_SRR11178050.1.trimReads \
     >     ./Sars_cov_2_SRR11178050.1.trimReads.err 2>&1
 
--- Finished on Thu May 28 18:50:33 2020 (one second) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:02 2020 (one second) with 57.032 GB free disk space
 ----------------------------------------
 --  PARAMETERS:
 --  ----------
@@ -947,10 +934,10 @@ Approx 95% complete for SRR11178050.fastq
 -- Report changed.
 -- Finished stage 'obt-trimReads', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:33 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:02 2020 with 57.032 GB free disk space
 
     cd trimming/3-overlapbasedtrimming
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/splitReads \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/splitReads \
       -S  ../../Sars_cov_2_SRR11178050.seqStore \
       -O  ../Sars_cov_2_SRR11178050.ovlStore \
       -Ci ./Sars_cov_2_SRR11178050.1.trimReads.clear \
@@ -960,7 +947,7 @@ Approx 95% complete for SRR11178050.fastq
       -o  ./Sars_cov_2_SRR11178050.2.splitReads \
     >     ./Sars_cov_2_SRR11178050.2.splitReads.err 2>&1
 
--- Finished on Thu May 28 18:50:33 2020 (fast as lightning) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:02 2020 (like a bat out of hell) with 57.032 GB free disk space
 ----------------------------------------
 --  PARAMETERS:
 --  ----------
@@ -1001,21 +988,21 @@ Approx 95% complete for SRR11178050.fastq
 -- Report changed.
 -- Finished stage 'obt-splitReads', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:33 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:02 2020 with 57.032 GB free disk space
 
     cd trimming/3-overlapbasedtrimming
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/loadTrimmedReads \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/loadTrimmedReads \
       -S ../../Sars_cov_2_SRR11178050.seqStore \
       -c ./Sars_cov_2_SRR11178050.2.splitReads.clear \
     > ./Sars_cov_2_SRR11178050.loadTrimmedReads.err 2>&1
 
--- Finished on Thu May 28 18:50:33 2020 (like a bat out of hell) with 23.877 GB free disk space
+-- Finished on Mon Jun  1 02:59:02 2020 (fast as lightning) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:33 2020 with 23.877 GB free disk space
+-- Starting command on Mon Jun  1 02:59:02 2020 with 57.032 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -corrected -trimmed \
       -histogram \
@@ -1024,13 +1011,13 @@ Approx 95% complete for SRR11178050.fastq
     2> ./Sars_cov_2_SRR11178050.seqStore/readlengths-utg.err 
     
 
--- Finished on Thu May 28 18:50:33 2020 (lickety-split) with 23.877 GB free disk space
+-- Finished on Mon Jun  1 02:59:02 2020 (in the blink of an eye) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:33 2020 with 23.877 GB free disk space
+-- Starting command on Mon Jun  1 02:59:02 2020 with 57.032 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpMetaData \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -corrected -trimmed \
       -histogram \
@@ -1038,7 +1025,7 @@ Approx 95% complete for SRR11178050.fastq
     2> ./Sars_cov_2_SRR11178050.seqStore/readlengths-utg.err 
     
 
--- Finished on Thu May 28 18:50:33 2020 (fast as lightning) with 23.877 GB free disk space
+-- Finished on Mon Jun  1 02:59:02 2020 (furiously fast) with 57.032 GB free disk space
 ----------------------------------------
 --
 -- In sequence store './Sars_cov_2_SRR11178050.seqStore':
@@ -1103,10 +1090,10 @@ Approx 95% complete for SRR11178050.fastq
 -- Report changed.
 -- Finished stage 'obt-dumpReads', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:33 2020 with 23.88 GB free disk space
+-- Starting command on Mon Jun  1 02:59:02 2020 with 57.034 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpFASTQ \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/sqStoreDumpFASTQ \
       -trimmed \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -o ./Sars_cov_2_SRR11178050.trimmedReads.gz \
@@ -1114,7 +1101,7 @@ Approx 95% complete for SRR11178050.fastq
       -trimmed -normal -nolibname \
     > ./Sars_cov_2_SRR11178050.trimmedReads.fasta.err 2>&1
 
--- Finished on Thu May 28 18:50:33 2020 (fast as lightning) with 23.88 GB free disk space
+-- Finished on Mon Jun  1 02:59:02 2020 (lickety-split) with 57.034 GB free disk space
 ----------------------------------------
 --
 -- Trimmed reads saved in 'Sars_cov_2_SRR11178050.trimmedReads.fasta.gz'.
@@ -1126,13 +1113,13 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- No change in report.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:33 2020 with 23.88 GB free disk space
+-- Starting command on Mon Jun  1 02:59:02 2020 with 57.034 GB free disk space
 
     cd unitigging/0-mercounts
     ./meryl-configure.sh \
     > ./meryl-configure.err 2>&1
 
--- Finished on Thu May 28 18:50:33 2020 (in the blink of an eye) with 23.88 GB free disk space
+-- Finished on Mon Jun  1 02:59:02 2020 (like a bat out of hell) with 57.034 GB free disk space
 ----------------------------------------
 --  segments   memory batches
 --  -------- -------- -------
@@ -1147,12 +1134,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'meryl' concurrent execution on Thu May 28 18:50:33 2020 with 23.88 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'meryl' concurrent execution on Mon Jun  1 02:59:02 2020 with 57.034 GB free disk space (1 processes; 2 concurrently)
 
     cd unitigging/0-mercounts
     ./meryl-count.sh 1 > ./meryl-count.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:34 2020 (one second) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:03 2020 (one second) with 57.033 GB free disk space
 ----------------------------------------
 -- Found 1 Kmer counting (meryl) outputs.
 -- No change in report.
@@ -1161,12 +1148,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'meryl' concurrent execution on Thu May 28 18:50:34 2020 with 23.879 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'meryl' concurrent execution on Mon Jun  1 02:59:03 2020 with 57.033 GB free disk space (1 processes; 2 concurrently)
 
     cd unitigging/0-mercounts
     ./meryl-process.sh 1 > ./meryl-process.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:35 2020 (one second) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:04 2020 (one second) with 57.033 GB free disk space
 ----------------------------------------
 -- Meryl finished successfully.  Kmer frequency histogram:
 --
@@ -1209,10 +1196,10 @@ Approx 95% complete for SRR11178050.fastq
 -- OVERLAPPER (normal) (assembly) erate=0.12
 --
 ----------------------------------------
--- Starting command on Thu May 28 18:50:35 2020 with 23.88 GB free disk space
+-- Starting command on Mon Jun  1 02:59:04 2020 with 57.034 GB free disk space
 
     cd unitigging/1-overlapper
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/overlapInCorePartition \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/overlapInCorePartition \
      -S  ../../Sars_cov_2_SRR11178050.seqStore \
      -hl 80000000 \
      -rl 1000000000 \
@@ -1220,7 +1207,7 @@ Approx 95% complete for SRR11178050.fastq
      -o  ./Sars_cov_2_SRR11178050.partition \
     > ./Sars_cov_2_SRR11178050.partition.err 2>&1
 
--- Finished on Thu May 28 18:50:35 2020 (lickety-split) with 23.88 GB free disk space
+-- Finished on Mon Jun  1 02:59:04 2020 (in the blink of an eye) with 57.034 GB free disk space
 ----------------------------------------
 --
 -- Configured 1 overlapInCore jobs.
@@ -1230,12 +1217,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'utgovl' concurrent execution on Thu May 28 18:50:35 2020 with 23.88 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'utgovl' concurrent execution on Mon Jun  1 02:59:04 2020 with 57.034 GB free disk space (1 processes; 1 concurrently)
 
     cd unitigging/1-overlapper
     ./overlap.sh 1 > ./overlap.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:38 2020 (3 seconds) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:06 2020 (2 seconds) with 57.033 GB free disk space
 ----------------------------------------
 -- Found 1 overlapInCore output files.
 --
@@ -1255,10 +1242,10 @@ Approx 95% complete for SRR11178050.fastq
 -- No change in report.
 -- Finished stage 'utg-overlapCheck', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:38 2020 with 23.879 GB free disk space
+-- Starting command on Mon Jun  1 02:59:06 2020 with 57.033 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreConfig \
      -S ../Sars_cov_2_SRR11178050.seqStore \
      -M 3 \
      -L ./1-overlapper/ovljob.files \
@@ -1266,7 +1253,7 @@ Approx 95% complete for SRR11178050.fastq
      > ./Sars_cov_2_SRR11178050.ovlStore.config.txt \
     2> ./Sars_cov_2_SRR11178050.ovlStore.config.err
 
--- Finished on Thu May 28 18:50:38 2020 (lickety-split) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:06 2020 (furiously fast) with 57.033 GB free disk space
 ----------------------------------------
 --
 -- Creating overlap store unitigging/Sars_cov_2_SRR11178050.ovlStore using:
@@ -1279,12 +1266,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'ovB' concurrent execution on Thu May 28 18:50:38 2020 with 23.879 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'ovB' concurrent execution on Mon Jun  1 02:59:06 2020 with 57.033 GB free disk space (1 processes; 2 concurrently)
 
     cd unitigging/Sars_cov_2_SRR11178050.ovlStore.BUILDING
     ./scripts/1-bucketize.sh 1 > ./logs/1-bucketize.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:38 2020 (in the blink of an eye) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:07 2020 (one second) with 57.033 GB free disk space
 ----------------------------------------
 -- Overlap store bucketizer finished.
 -- No change in report.
@@ -1293,42 +1280,42 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'ovS' concurrent execution on Thu May 28 18:50:38 2020 with 23.879 GB free disk space (2 processes; 1 concurrently)
+-- Starting 'ovS' concurrent execution on Mon Jun  1 02:59:07 2020 with 57.033 GB free disk space (2 processes; 1 concurrently)
 
     cd unitigging/Sars_cov_2_SRR11178050.ovlStore.BUILDING
     ./scripts/2-sort.sh 1 > ./logs/2-sort.000001.out 2>&1
     ./scripts/2-sort.sh 2 > ./logs/2-sort.000002.out 2>&1
 
--- Finished on Thu May 28 18:50:38 2020 (furiously fast) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:07 2020 (like a bat out of hell) with 57.032 GB free disk space
 ----------------------------------------
 -- Overlap store sorter finished.
 -- No change in report.
 -- Finished stage 'utg-overlapStoreSorterCheck', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:38 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:07 2020 with 57.032 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreIndexer \
       -O  ./Sars_cov_2_SRR11178050.ovlStore.BUILDING \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -C  ./Sars_cov_2_SRR11178050.ovlStore.config \
       -delete \
     > ./Sars_cov_2_SRR11178050.ovlStore.BUILDING.index.err 2>&1
 
--- Finished on Thu May 28 18:50:38 2020 (fast as lightning) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:07 2020 (fast as lightning) with 57.032 GB free disk space
 ----------------------------------------
 -- Checking store.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:38 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:07 2020 with 57.032 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreDump \
      -S ../Sars_cov_2_SRR11178050.seqStore \
      -O  ./Sars_cov_2_SRR11178050.ovlStore \
      -counts \
      > ./Sars_cov_2_SRR11178050.ovlStore/counts.dat 2> ./Sars_cov_2_SRR11178050.ovlStore/counts.err
 
--- Finished on Thu May 28 18:50:38 2020 (furiously fast) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:07 2020 (like a bat out of hell) with 57.032 GB free disk space
 ----------------------------------------
 --
 -- Overlap store 'unitigging/Sars_cov_2_SRR11178050.ovlStore' successfully constructed.
@@ -1337,17 +1324,17 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Purged 0 GB in 3 overlap output files.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:38 2020 with 23.879 GB free disk space
+-- Starting command on Mon Jun  1 02:59:07 2020 with 57.033 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/ovStoreStats \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/ovStoreStats \
      -C 11 \
      -S ../Sars_cov_2_SRR11178050.seqStore \
      -O  ./Sars_cov_2_SRR11178050.ovlStore \
      -o  ./Sars_cov_2_SRR11178050.ovlStore \
      > ./Sars_cov_2_SRR11178050.ovlStore.summary.err 2>&1
 
--- Finished on Thu May 28 18:50:39 2020 (one second) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:07 2020 (fast as lightning) with 57.033 GB free disk space
 ----------------------------------------
 --
 -- Overlap store 'unitigging/Sars_cov_2_SRR11178050.ovlStore' contains:
@@ -1391,12 +1378,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'red' concurrent execution on Thu May 28 18:50:39 2020 with 23.879 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'red' concurrent execution on Mon Jun  1 02:59:07 2020 with 57.033 GB free disk space (1 processes; 2 concurrently)
 
     cd unitigging/3-overlapErrorAdjustment
     ./red.sh 1 > ./red.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:39 2020 (lickety-split) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:08 2020 (one second) with 57.033 GB free disk space
 ----------------------------------------
 -- Found 1 read error detection output files.
 -- No change in report.
@@ -1421,27 +1408,27 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'oea' concurrent execution on Thu May 28 18:50:40 2020 with 23.879 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'oea' concurrent execution on Mon Jun  1 02:59:08 2020 with 57.033 GB free disk space (1 processes; 2 concurrently)
 
     cd unitigging/3-overlapErrorAdjustment
     ./oea.sh 1 > ./oea.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:40 2020 (furiously fast) with 23.879 GB free disk space
+-- Finished on Mon Jun  1 02:59:10 2020 (2 seconds) with 57.033 GB free disk space
 ----------------------------------------
 -- Found 1 overlap error adjustment output files.
 -- No change in report.
 -- Finished stage 'overlapErrorAdjustmentCheck', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:40 2020 with 23.879 GB free disk space
+-- Starting command on Mon Jun  1 02:59:10 2020 with 57.033 GB free disk space
 
     cd unitigging/3-overlapErrorAdjustment
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/loadErates \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/loadErates \
       -S ../../Sars_cov_2_SRR11178050.seqStore \
       -O ../Sars_cov_2_SRR11178050.ovlStore \
       -L ./oea.files \
     > ./oea.apply.err 2>&1
 
--- Finished on Thu May 28 18:50:40 2020 (lickety-split) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:10 2020 (fast as lightning) with 57.033 GB free disk space
 ----------------------------------------
 -- No report available.
 -- Report changed.
@@ -1452,12 +1439,12 @@ Approx 95% complete for SRR11178050.fastq
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'bat' concurrent execution on Thu May 28 18:50:40 2020 with 23.878 GB free disk space (1 processes; 1 concurrently)
+-- Starting 'bat' concurrent execution on Mon Jun  1 02:59:10 2020 with 57.033 GB free disk space (1 processes; 1 concurrently)
 
     cd unitigging/4-unitigger
     ./unitigger.sh 1 > ./unitigger.000001.out 2>&1
 
--- Finished on Thu May 28 18:50:41 2020 (one second) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:10 2020 (like a bat out of hell) with 57.032 GB free disk space
 ----------------------------------------
 -- Unitigger finished successfully.
 -- Found, in version 1, after unitig construction:
@@ -1476,28 +1463,28 @@ Approx 95% complete for SRR11178050.fastq
 -- Report changed.
 -- Finished stage 'unitigCheck', reset canuIteration.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:41 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:10 2020 with 57.032 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/utgcns \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/utgcns \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -T  ./Sars_cov_2_SRR11178050.ctgStore 1 \
       -partition 0.8 1 0.1 \
     > ./Sars_cov_2_SRR11178050.ctgStore/partitioning.log 2>&1
 
--- Finished on Thu May 28 18:50:41 2020 (like a bat out of hell) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:11 2020 (one second) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:41 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:11 2020 with 57.032 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/utgcns \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/utgcns \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -T  ./Sars_cov_2_SRR11178050.utgStore 1 \
       -partition 0.8 1 0.1 \
     > ./Sars_cov_2_SRR11178050.utgStore/partitioning.log 2>&1
 
--- Finished on Thu May 28 18:50:41 2020 (in the blink of an eye) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:11 2020 (like a bat out of hell) with 57.032 GB free disk space
 ----------------------------------------
 -- Using slow alignment for consensus (iteration '0').
 -- Configured 2 contig and 2 unitig consensus jobs.
@@ -1509,13 +1496,13 @@ Approx 95% complete for SRR11178050.fastq
 --                (tag)Memory         |          |
 --        (tag)             |         |          |       total usage      algorithm
 --        -------  ----------  --------   --------  --------------------  -----------------------------
--- Local: cns        0.500 GB    2 CPUs x   1 job      0.500 GB   2 CPUs  (consensus)
+-- Local: cns        0.500 GB    4 CPUs x   1 job      0.500 GB   4 CPUs  (consensus)
 --
 -- No change in report.
 --
 -- Running jobs.  First attempt out of 2.
 ----------------------------------------
--- Starting 'cns' concurrent execution on Thu May 28 18:50:41 2020 with 23.878 GB free disk space (4 processes; 1 concurrently)
+-- Starting 'cns' concurrent execution on Mon Jun  1 02:59:11 2020 with 57.032 GB free disk space (4 processes; 1 concurrently)
 
     cd unitigging/5-consensus
     ./consensus.sh 1 > ./consensus.000001.out 2>&1
@@ -1523,7 +1510,7 @@ Approx 95% complete for SRR11178050.fastq
     ./consensus.sh 3 > ./consensus.000003.out 2>&1
     ./consensus.sh 4 > ./consensus.000004.out 2>&1
 
--- Finished on Thu May 28 18:50:43 2020 (2 seconds) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:12 2020 (one second) with 57.032 GB free disk space
 ----------------------------------------
 -- Using slow alignment for consensus (iteration '1').
 -- Configured 2 contig and 2 unitig consensus jobs.
@@ -1535,43 +1522,43 @@ Approx 95% complete for SRR11178050.fastq
 -- Configured 2 contig and 2 unitig consensus jobs.
 -- No change in report.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:12 2020 with 57.032 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/tgStoreLoad \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreLoad \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -T  ./Sars_cov_2_SRR11178050.ctgStore 2 \
       -L ./5-consensus/ctgcns.files \
     > ./5-consensus/ctgcns.files.ctgStoreLoad.err 2>&1
 
--- Finished on Thu May 28 18:50:43 2020 (lickety-split) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:12 2020 (furiously fast) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:12 2020 with 57.032 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/tgStoreLoad \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreLoad \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -T  ./Sars_cov_2_SRR11178050.utgStore 2 \
       -L ./5-consensus/utgcns.files \
     > ./5-consensus/utgcns.files.utgStoreLoad.err 2>&1
 
--- Finished on Thu May 28 18:50:43 2020 (lickety-split) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:12 2020 (fast as lightning) with 57.032 GB free disk space
 ----------------------------------------
 -- Purging consensus output after loading to ctgStore and/or utgStore.
 -- Purged 4 .cns outputs.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:12 2020 with 57.032 GB free disk space
 
     cd unitigging
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
       -S ../Sars_cov_2_SRR11178050.seqStore \
       -T ./Sars_cov_2_SRR11178050.ctgStore 2 \
       -sizes -s 30000 \
     > ./Sars_cov_2_SRR11178050.ctgStore/seqDB.v002.sizes.txt
 sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
 
--- Finished on Thu May 28 18:50:43 2020 (like a bat out of hell) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:12 2020 (furiously fast) with 57.032 GB free disk space
 ----------------------------------------
 -- Found, in version 2, after consensus generation:
 --   contigs:      6 sequences, total length 11377 bp (including 0 repeats of total length 0 bp).
@@ -1590,45 +1577,45 @@ sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
 -- Finished stage 'consensusLoad', reset canuIteration.
 -- No change in report.
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:12 2020 with 57.032 GB free disk space
 
     cd unitigging/4-unitigger
     ./alignGFA.sh \
     > alignGFA.err 2>&1
 
--- Finished on Thu May 28 18:50:43 2020 (like a bat out of hell) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:13 2020 (one second) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:13 2020 with 57.032 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -T ./unitigging/Sars_cov_2_SRR11178050.ctgStore 2 \
       -o ./Sars_cov_2_SRR11178050.contigs \
       -layout \
     > ./Sars_cov_2_SRR11178050.contigs.layout.err 2>&1
 
--- Finished on Thu May 28 18:50:43 2020 (fast as lightning) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:13 2020 (in the blink of an eye) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:13 2020 with 57.032 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -T ./unitigging/Sars_cov_2_SRR11178050.utgStore 2 \
       -o ./Sars_cov_2_SRR11178050.unitigs \
       -layout \
     > ./Sars_cov_2_SRR11178050.unitigs.layout.err 2>&1
 
--- Finished on Thu May 28 18:50:43 2020 (lickety-split) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:13 2020 (in the blink of an eye) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:13 2020 with 57.032 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -T ./unitigging/Sars_cov_2_SRR11178050.ctgStore 2 \
       -consensus -fasta \
@@ -1637,13 +1624,13 @@ sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
     2> ./Sars_cov_2_SRR11178050.unassembled.err
 sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
 
--- Finished on Thu May 28 18:50:43 2020 (in the blink of an eye) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:13 2020 (lickety-split) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:13 2020 with 57.032 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -T ./unitigging/Sars_cov_2_SRR11178050.ctgStore 2 \
       -consensus -fasta \
@@ -1652,13 +1639,13 @@ sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
     2> ./Sars_cov_2_SRR11178050.contigs.err
 sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
 
--- Finished on Thu May 28 18:50:43 2020 (furiously fast) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:13 2020 (lickety-split) with 57.032 GB free disk space
 ----------------------------------------
 ----------------------------------------
--- Starting command on Thu May 28 18:50:43 2020 with 23.878 GB free disk space
+-- Starting command on Mon Jun  1 02:59:13 2020 with 57.032 GB free disk space
 
     cd .
-    /home/ubuntu/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
+    /home/matheus/processamento_workflow/canu/Linux-amd64/bin/tgStoreDump \
       -S ./Sars_cov_2_SRR11178050.seqStore \
       -T ./unitigging/Sars_cov_2_SRR11178050.utgStore 2 \
       -consensus -fasta \
@@ -1667,12 +1654,12 @@ sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
     2> ./Sars_cov_2_SRR11178050.unitigs.err
 sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
 
--- Finished on Thu May 28 18:50:43 2020 (like a bat out of hell) with 23.878 GB free disk space
+-- Finished on Mon Jun  1 02:59:13 2020 (in the blink of an eye) with 57.032 GB free disk space
 ----------------------------------------
 -- No change in report.
 -- Finished stage 'generateOutputs', reset canuIteration.
 --
--- Assembly 'Sars_cov_2_SRR11178050' finished in '/home/ubuntu/processamento_workflow/SRR11178050_05-28-2020-18-47-05/Sars_cov_2_SRR11178050'.
+-- Assembly 'Sars_cov_2_SRR11178050' finished in '/home/matheus/processamento_workflow/SRR11178050_06-01-2020-02-56-27/Sars_cov_2_SRR11178050'.
 --
 -- Summary saved in 'Sars_cov_2_SRR11178050.report'.
 --
@@ -1689,5 +1676,5 @@ sqStore_loadMetadata()-- Using 'corrected-trimmed' 0x10 reads.
 --   Unitigs       -> 'Sars_cov_2_SRR11178050.unitigs.gfa'.
 --
 -- Bye.
-178.35user 9.98system 3:37.98elapsed 86%CPU (0avgtext+0avgdata 2543248maxresident)k
-1528inputs+1815496outputs (22major+3383438minor)pagefaults 0swaps
+161.75user 6.30system 1:08.20elapsed 246%CPU (0avgtext+0avgdata 1703060maxresident)k
+0inputs+332008outputs (0major+689155minor)pagefaults 0swaps

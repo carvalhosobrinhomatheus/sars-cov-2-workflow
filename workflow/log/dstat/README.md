@@ -1,2 +1,0 @@
-
-# DSTAT analysis resources tool

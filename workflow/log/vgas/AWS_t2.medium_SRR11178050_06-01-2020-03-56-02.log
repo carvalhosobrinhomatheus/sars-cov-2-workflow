@@ -1,25 +1,3 @@
-   ### Execute -  SRR11178050
-    ###[$ fastq-dump  SRR11178050 ]
-Read 359570 spots for SRR11178050
-Written 359570 spots for SRR11178050
-
-
-
-    ###[$ fastqc  SRR11178050 .fastq]
-Analysis complete for SRR11178050.fastq
-
-
-
-    ###[$ NanoFilt -q 5 -l 300 --headcrop 20 --tailcrop 20 SRR11178050.fastq > SRR11178050_high_quality.fastq]
-
-
-
-    ###[$ canu genomeSize=30k executiveThreads=4 -p Sars_cov_2_SRR11178050 -d Sars_cov_2_SRR11178050 -nanopore SRR11178050_high_quality.fastq]
-
-
-
-    ###[$ cd $1/]
-    ###[$ ./vgas SRR11178050/Sars_cov_2_SRR11178050/Sars_cov_2_SRR11178050.contigs.fasta Sars_cov_2_SRR11178050.gene.prediction -n -p -b]
 
 
          WELCOME TO VGAS! (LOCAL VERSION)
@@ -157,9 +135,5 @@ The number of base pairs in the analyzed genome:               11722
 The GC content of the genome:                                 45.46%
 The number of ORFs longer than    90 bp:                          65
 The number of genes longer than    90 bp recognized by zcurve:    12
-Chromosome positions of predicted genes are saved in :
-          Sars_cov_2_SRR11178050_05-28-2020-18-47-05.gene.prediction
-Nuclotide acid sequences of predicted genes are saved in :
-     gene_Sars_cov_2_SRR11178050_05-28-2020-18-47-05.gene.prediction
-Traslated amino acid sequences of predicted genes are saved in :
-  protein_Sars_cov_2_SRR11178050_05-28-2020-18-47-05.gene.prediction
+
+ERROR!!! Can't create the result file 'Sars_cov_2_SRR11178050/Sars_cov_2_SRR11178050.gene.prediction'.

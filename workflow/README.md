@@ -49,5 +49,12 @@ elif isinstance(self.val[name], str):
 `To fix problem, execute this command:`
 
 ```console
-    cp dstat/dstat /usr/bin/dstat.override && mv /usr/bin/dstat /usr/bin/dstat.old && mv /usr/bin/dstat.override /usr/bin/dstat
+    cp ${UTILS_DIR}/dstat /usr/bin/dstat.override && mv /usr/bin/dstat /usr/bin/dstat.old && mv /usr/bin/dstat.override /usr/bin/dstat
 ```
+`Remove elements tests`
+sudo rm -rf dstat/canu/AWS_t2.medium_SRR1117805* dstat/fastqc/AWS_t2.medium_SRR1117805* dstat/fastq_dump/AWS_t2.medium_SRR1117805* dstat/nanofilt/AWS_t2.medium_SRR1117805* 
+
+sudo rm -rf log/canu/AWS_t2.medium_SRR1117805* log/fastqc/AWS_t2.medium_SRR1117805* log/fastq_dump/AWS_t2.medium_SRR1117805* log/nanofilt/AWS_t2.medium_SRR1117805* 
+
+sudo rm -rf time/canu/AWS_t2.medium_SRR1117805* time/fastqc/AWS_t2.medium_SRR1117805* time/fastq_dump/AWS_t2.medium_SRR1117805* time/nanofilt/AWS_t2.medium_SRR1117805*
+

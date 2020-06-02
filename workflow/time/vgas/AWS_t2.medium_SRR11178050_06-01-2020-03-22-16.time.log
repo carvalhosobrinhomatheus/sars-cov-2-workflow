@@ -1,0 +1,7 @@
+Command exited with non-zero status 255
+0.00user 0.00system 0:00.01elapsed 100%CPU (0avgtext+0avgdata 3852maxresident)k
+0inputs+8outputs (0major+213minor)pagefaults 0swaps
+*** stack smashing detected ***: <unknown> terminated
+Command terminated by signal 6
+0.00user 0.00system 0:00.01elapsed 100%CPU (0avgtext+0avgdata 3828maxresident)k
+0inputs+32outputs (0major+209minor)pagefaults 0swaps
