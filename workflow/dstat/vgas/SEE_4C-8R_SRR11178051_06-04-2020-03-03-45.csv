@@ -1,0 +1,7 @@
+"Dstat 0.7.3 CSV output"
+"Author:","Dag Wieers <dag@wieers.com>",,,,"URL:","http://dag.wieers.com/home-made/dstat/"
+"Host:","S650SV068",,,,"User:","root"
+"Cmdline:","dstat -C -D -N -m -r -y -g -i -l -p -s -t -T --noheaders --output /home/matheus/sars-cov-2-workflow/workflow/dstat/vgas/SEE_4C-8R_SRR11178051_06-04-2020-03-03-45.csv",,,,"Date:","04 Jun 2020 03:12:14 -03"
+"io/total",,"system",,"paging",,"interrupts",,,"load avg",,,"procs",,,"swap",,"system","epoch"
+"read","writ","int","csw","in","out","12","18","56","1m","5m","15m","run","blk","new","used","free","time","epoch"
+0.101,0.200,83.945,87.080,17.843,75.031,0.000,5.791,0.496,1.830,2.030,1.890,0,1,0.139,31125504,8554610688,04-06 03:12:14,1591251134.049

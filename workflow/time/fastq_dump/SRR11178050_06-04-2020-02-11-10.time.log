@@ -1,0 +1,4 @@
+fastq-dump was killed (signal 2)
+Command exited with non-zero status 3
+0.09user 0.03system 0:05.94elapsed 2%CPU (0avgtext+0avgdata 7764maxresident)k
+0inputs+512outputs (0major+1975minor)pagefaults 0swaps

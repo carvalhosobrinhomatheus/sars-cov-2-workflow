@@ -1,0 +1,118 @@
+
+
+         WELCOME TO VGAS! (LOCAL VERSION)
+   PREDICTION OF PROTEIN CODING GENES IN VIRAL AND PHAGE GENOMES
+
+!!! NOTE: non-standard 15 DNA base codes of IUPAC-IUB. 
+!!!      total number: 100
+!!!      29651 : i
+!!!      29653 : l
+!!!      29654 : e
+!!!      29657 : e
+!!!      29662 : l
+!!!      29667 : o
+!!!      29670 : i
+!!!      29673 : u
+!!!      29676 : e
+!!!      29680 : e
+!!!      29681 : p
+!!!      29682 : e
+!!!      29686 : o
+!!!      29688 : u
+!!!      29691 : e
+!!!      29695 : u
+!!!      29698 : l
+!!!      29699 : e
+!!!      29701 : e
+!!!      29704 : u
+!!!      29707 : e
+!!!      29711 : i
+!!!      29714 : u
+!!!      29715 : l
+!!!      29719 : o
+!!!      31024 : i
+!!!      31026 : l
+!!!      31027 : e
+!!!      31030 : e
+!!!      31035 : l
+!!!      31040 : o
+!!!      31043 : i
+!!!      31046 : u
+!!!      31049 : e
+!!!      31053 : e
+!!!      31054 : p
+!!!      31055 : e
+!!!      31059 : o
+!!!      31061 : u
+!!!      31064 : e
+!!!      31068 : u
+!!!      31071 : l
+!!!      31072 : e
+!!!      31074 : e
+!!!      31077 : u
+!!!      31080 : e
+!!!      31084 : i
+!!!      31087 : u
+!!!      31088 : l
+!!!      31092 : o
+!!!      32188 : i
+!!!      32190 : l
+!!!      32191 : e
+!!!      32194 : e
+!!!      32199 : l
+!!!      32204 : o
+!!!      32207 : i
+!!!      32210 : u
+!!!      32213 : e
+!!!      32217 : e
+!!!      32218 : p
+!!!      32219 : e
+!!!      32223 : o
+!!!      32225 : u
+!!!      32228 : e
+!!!      32232 : u
+!!!      32235 : l
+!!!      32236 : e
+!!!      32238 : o
+!!!      32240 : u
+!!!      32243 : e
+!!!      32247 : i
+!!!      32250 : u
+!!!      32251 : l
+!!!      32255 : o
+!!!      34072 : i
+!!!      34074 : l
+!!!      34075 : e
+!!!      34078 : e
+!!!      34083 : l
+!!!      34088 : o
+!!!      34091 : i
+!!!      34094 : u
+!!!      34097 : e
+!!!      34101 : e
+!!!      34102 : p
+!!!      34103 : e
+!!!      34107 : o
+!!!      34109 : u
+!!!      34112 : e
+!!!      34116 : u
+!!!      34119 : l
+!!!      34120 : e
+!!!      34122 : e
+!!!      34125 : u
+!!!      34128 : e
+!!!      34132 : i
+!!!      34135 : u
+!!!      34136 : l
+!!!      34140 : o
+!!!      We have replaced these nonstandard bases with 'n'.
+The number of base pairs in the analyzed genome:               35969
+The GC content of the genome:                                 38.99%
+The number of ORFs longer than    90 bp:                         183
+The number of genes longer than    90 bp recognized by zcurve:    43
+Chromosome positions of predicted genes are saved in :
+SRR11178051_06-04-2020-03-03-45/Sars_cov_2_SRR11178051.gene.prediction
+Nuclotide acid sequences of predicted genes are saved in :
+gene_SRR11178051_06-04-2020-03-03-45/Sars_cov_2_SRR11178051.gene.prediction
+Traslated amino acid sequences of predicted genes are saved in :
+protein_SRR11178051_06-04-2020-03-03-45/Sars_cov_2_SRR11178051.gene.prediction

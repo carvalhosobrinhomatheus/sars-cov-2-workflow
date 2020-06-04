@@ -16,8 +16,8 @@ for COUNT in $(seq 1 ${ROUNDS}); do
         sh 3_canu.sh ${i} ${DATETIME}
         sh 4_vgas.sh ${i} ${DATETIME}
     done
-    #(echo "[${IP_HOST}] - Excecution number [${COUNT}] - SRR - [${EXECS_SRR}]") >> log/"${CLOUD}_${MACHINE}_general_log__${GENERAL_DATETIME}.log"
-    # DELETE files
+    (echo "[${IP_HOST}] - Excecution number [${COUNT}] - SRR - [${EXECS_SRR}]") >> log/"${CLOUD}_${MACHINE}_general_log__${GENERAL_DATETIME}.log"
+    #DELETE files
 done
 
 

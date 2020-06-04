@@ -1,0 +1,14 @@
+2020-06-04T03:44:26 fastq-dump.2.10.6 err: timeout exhausted while waiting condition within process system module - failed SRR11178052
+
+=============================================================
+An error occurred during processing.
+A report was generated into the file '/root/ncbi_error_report.txt'.
+If the problem persists, you may consider sending the file
+to 'sra-tools@ncbi.nlm.nih.gov' for assistance.
+=============================================================
+
+2020-06-04T04:04:22 fastq-dump.2.10.6 err: transfer canceled while allocating buffer within file system module - Cannot KHttpFileTimedReadChunked: to=480
+fastq-dump quit with error code 3
+Command exited with non-zero status 3
+9.46user 2.11system 24:41.04elapsed 0%CPU (0avgtext+0avgdata 189464maxresident)k
+1880inputs+1169256outputs (0major+50824minor)pagefaults 0swaps

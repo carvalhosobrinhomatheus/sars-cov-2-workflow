@@ -1,0 +1,93 @@
+
+
+         WELCOME TO VGAS! (LOCAL VERSION)
+   PREDICTION OF PROTEIN CODING GENES IN VIRAL AND PHAGE GENOMES
+
+!!! NOTE: non-standard 15 DNA base codes of IUPAC-IUB. 
+!!!      total number: 75
+!!!      29673 : i
+!!!      29675 : l
+!!!      29676 : e
+!!!      29679 : e
+!!!      29684 : l
+!!!      29689 : o
+!!!      29692 : i
+!!!      29695 : u
+!!!      29698 : e
+!!!      29702 : e
+!!!      29703 : p
+!!!      29704 : e
+!!!      29708 : o
+!!!      29710 : u
+!!!      29713 : e
+!!!      29717 : u
+!!!      29720 : l
+!!!      29721 : e
+!!!      29723 : e
+!!!      29726 : u
+!!!      29729 : e
+!!!      29733 : i
+!!!      29736 : u
+!!!      29737 : l
+!!!      29741 : o
+!!!      32169 : i
+!!!      32171 : l
+!!!      32172 : e
+!!!      32175 : e
+!!!      32180 : l
+!!!      32185 : o
+!!!      32188 : i
+!!!      32191 : u
+!!!      32194 : e
+!!!      32198 : e
+!!!      32199 : p
+!!!      32200 : e
+!!!      32204 : o
+!!!      32206 : u
+!!!      32209 : e
+!!!      32213 : u
+!!!      32216 : l
+!!!      32217 : e
+!!!      32219 : o
+!!!      32221 : u
+!!!      32224 : e
+!!!      32228 : i
+!!!      32231 : u
+!!!      32232 : l
+!!!      32236 : o
+!!!      33905 : i
+!!!      33907 : l
+!!!      33908 : e
+!!!      33911 : e
+!!!      33916 : l
+!!!      33921 : o
+!!!      33924 : i
+!!!      33927 : u
+!!!      33930 : e
+!!!      33934 : e
+!!!      33935 : p
+!!!      33936 : e
+!!!      33940 : o
+!!!      33942 : u
+!!!      33945 : e
+!!!      33949 : u
+!!!      33952 : l
+!!!      33953 : e
+!!!      33955 : e
+!!!      33958 : u
+!!!      33961 : e
+!!!      33965 : i
+!!!      33968 : u
+!!!      33969 : l
+!!!      33973 : o
+!!!      We have replaced these nonstandard bases with 'n'.
+The number of base pairs in the analyzed genome:               35270
+The GC content of the genome:                                 38.82%
+The number of ORFs longer than    90 bp:                         180
+The number of genes longer than    90 bp recognized by zcurve:    39
+Chromosome positions of predicted genes are saved in :
+SRR11178051_06-04-2020-02-44-04/Sars_cov_2_SRR11178051.gene.prediction
+Nuclotide acid sequences of predicted genes are saved in :
+gene_SRR11178051_06-04-2020-02-44-04/Sars_cov_2_SRR11178051.gene.prediction
+Traslated amino acid sequences of predicted genes are saved in :
+protein_SRR11178051_06-04-2020-02-44-04/Sars_cov_2_SRR11178051.gene.prediction
